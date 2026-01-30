@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.student.transactiondetail.TransactionDetailFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size_m"
+            android:paddingTop="@dimen/size_m"
+            android:paddingBottom="111dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/box_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+                android:padding="@dimen/size_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_m"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/detail"
+                    app:layout_constraintBottom_toTopOf="@id/text_order_id"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_order_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/order_id"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/order_id"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_detail" />
+
+                <TextView
+                    android:id="@+id/order_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_order_id" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/box_courses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+                android:orientation="vertical"
+                android:padding="@dimen/size_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/box_order">
+
+                <TextView
+                    android:id="@+id/text_courses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_m"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/courses"
+                    app:layout_constraintBottom_toTopOf="@id/text_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/title"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/course_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_courses" />
+
+                <TextView
+                    android:id="@+id/course_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toTopOf="@id/text_price"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+                <TextView
+                    android:id="@+id/text_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_m"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/price"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/course_price"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/course_title" />
+
+                <TextView
+                    android:id="@+id/course_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toTopOf="@+id/text_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_price" />
+
+                <TextView
+                    android:id="@+id/text_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_m"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/status"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/course_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/course_price" />
+
+                <TextView
+                    android:id="@+id/course_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toTopOf="@id/text_created_at"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_status" />
+
+                <TextView
+                    android:id="@+id/text_created_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_m"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/created_at"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/course_created_at"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/course_status" />
+
+                <TextView
+                    android:id="@+id/course_created_at"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_created_at" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/box_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+                android:orientation="vertical"
+                android:padding="@dimen/size_m"
+                android:layout_marginTop="@dimen/size_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/box_courses">
+
+                <TextView
+                    android:id="@+id/text_coupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_l"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/coupon"
+                    app:layout_constraintBottom_toTopOf="@id/text_discount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/discount"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/coupon_discount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_coupon" />
+
+                <TextView
+                    android:id="@+id/coupon_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toTopOf="@id/text_expiry_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_discount" />
+
+                <TextView
+                    android:id="@+id/text_expiry_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_m"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/expiry_date"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/coupon_discount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/coupon_discount" />
+
+                <TextView
+                    android:id="@+id/coupon_expiry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_expiry_date" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/text_warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment_student_transaction_detail_warning"
+                android:textColor="@color/orange_color"
+                android:textSize="@dimen/text_s"
+                android:layout_marginTop="@dimen/size_m"
+                app:layout_constraintBottom_toTopOf="@id/button_buy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/box_coupon" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/button_buy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                android:background="@drawable/bg_blue_radiuss"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_trans_bg_radiuss"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/size_m"
+                android:paddingVertical="@dimen/size_xxs"
+                app:layout_constraintEnd_toStartOf="@id/button_cancel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_warning">
+
+                <TextView
+                    android:id="@+id/text_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_s"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pay"
+                    android:textColor="#fff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/icon_paid"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon_paid"
+                    android:layout_width="@dimen/size_x"
+                    android:layout_height="@dimen/size_x"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_student_paid"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/text_paid"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#fff" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/button_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_s"
+                android:background="@drawable/bg_red_radiuss"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_medium"
+                android:foreground="@drawable/ripple_trans_bg_radiuss"
+                android:paddingHorizontal="@dimen/size_m"
+                android:paddingVertical="@dimen/size_xxs"
+                android:text="@string/cancel"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                app:layout_constraintEnd_toStartOf="@id/button_free_paid"
+                app:layout_constraintStart_toEndOf="@id/button_buy"
+                app:layout_constraintTop_toTopOf="@+id/button_buy" />
+
+            <TextView
+                android:id="@+id/button_free_paid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_green_radiuss"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_medium"
+                android:foreground="@drawable/ripple_trans_bg_radiuss"
+                android:paddingHorizontal="@dimen/size_m"
+                android:paddingVertical="@dimen/size_xxs"
+                android:text="@string/free"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/button_cancel"
+                app:layout_constraintTop_toTopOf="@+id/button_buy" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_themefirst_radiusm_bordercolordefault"
+            android:indeterminateTint="@color/blue_color"
+            android:padding="@dimen/size_m"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

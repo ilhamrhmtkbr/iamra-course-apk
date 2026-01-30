@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="25dp"
+    android:paddingHorizontal="@dimen/size_m"
+    android:paddingBottom="60dp"
+    tools:context=".presentation.member.additionalinfo.AdditionalInfoBottomSheetMap">
+
+    <TextView
+        android:id="@+id/text_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/map_mode"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginBottom="@dimen/size_s"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/search_address"/>
+
+    <SearchView
+        android:id="@+id/search_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+        android:queryHint="Cari alamat..."
+        android:iconifiedByDefault="false"
+        app:layout_constraintTop_toBottomOf="@id/text_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/map"/>
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/search_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- FAB My Location -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_my_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/fifth_bg_color"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:contentDescription="Lokasi Saya"
+        app:tint="@color/text_color"
+        app:borderWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fab_confirm" />
+
+    <!-- FAB Confirm Location -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/fifth_bg_color"
+        android:src="@android:drawable/ic_menu_save"
+        android:contentDescription="Konfirmasi Lokasi"
+        app:tint="@color/text_color"
+        app:borderWidth="0dp"
+        app:strokeColor="@color/blue_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

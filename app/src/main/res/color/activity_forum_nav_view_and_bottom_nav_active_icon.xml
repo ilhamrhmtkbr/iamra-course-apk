@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- warna item yang aktif -->
+    <item android:color="@color/wa_green_light_color" android:state_checked="true" />
+    <!-- warna item yang tidak aktif -->
+    <item android:color="@color/wa_green_color" android:state_checked="false" />
+</selector>

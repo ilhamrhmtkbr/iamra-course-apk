@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.student.progress.ProgressFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/size_m"
+            android:paddingHorizontal="@dimen/size_m"
+            android:paddingBottom="111dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/courseImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:clipToOutline="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/courseTitle"/>
+
+            <TextView
+                android:id="@+id/courseTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_s"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/text_l"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/courseImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/courseDesc"/>
+
+            <TextView
+                android:id="@+id/courseDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/size_xx"
+                app:layout_constraintTop_toBottomOf="@id/courseTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/course_status"/>
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/course_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_s"
+                app:custom_title="@string/status"
+                app:layout_constraintEnd_toStartOf="@id/course_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseDesc" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/course_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_s"
+                app:custom_title="@string/price"
+                app:layout_constraintEnd_toStartOf="@id/course_level"
+                app:layout_constraintStart_toEndOf="@id/course_status"
+                app:layout_constraintTop_toTopOf="@id/course_status"
+                app:layout_constraintBottom_toBottomOf="@id/course_status"
+                />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/course_level"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:custom_title="@string/level"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/course_price"
+                app:layout_constraintTop_toTopOf="@id/course_status"
+                app:layout_constraintBottom_toBottomOf="@id/course_status"/>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/charts"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:layout_marginTop="@dimen/size_m"
+                app:layout_constraintTop_toBottomOf="@id/course_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/button_submit"
+                />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.ButtonSubmit
+                android:id="@+id/button_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_x"
+                app:custom_label="Submit Certificate"
+                app:layout_constraintTop_toBottomOf="@id/charts"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_themefirst_radiusm_bordercolordefault"
+                android:indeterminateTint="@color/blue_color"
+                android:padding="@dimen/size_m"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

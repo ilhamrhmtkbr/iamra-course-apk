@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/setting_button"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="175dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:foreground="@drawable/ripple_trans_bg_radiusm"
+    android:padding="@dimen/size_s"
+    android:layout_marginEnd="@dimen/size_xs"
+    tools:context=".presentation.guest.home.HomeMenuAdapter">
+
+    <ImageView
+        android:id="@+id/setting_icon"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_marginEnd="@dimen/size_s"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toStartOf="@id/setting_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/setting_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/setting_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

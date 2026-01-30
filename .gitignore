@@ -1,0 +1,79 @@
+# ============================================
+# 1. BUILD OUTPUT (Generated files - JANGAN DI-COMMIT)
+# ============================================
+# Kenapa: File ini di-generate otomatis saat build
+# Ukuran bisa ratusan MB, bikin repo berat
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+bin/
+gen/
+out/
+build/
+*/build/
+release/
+
+# ============================================
+# 2. GRADLE (Build system cache)
+# ============================================
+# Kenapa: Cache gradle, auto di-download lagi pas build
+.gradle/
+.gradle
+local.properties
+
+# ============================================
+# 3. IDE - Android Studio / IntelliJ
+# ============================================
+# Kenapa: Setting personal tiap developer beda-beda
+*.iml
+.idea/
+# OPTIONAL: Uncomment line dibawah kalo mau keep team settings
+# !.idea/runConfigurations/
+# !.idea/codeStyles/
+
+# ============================================
+# 4. KEYSTORE FILES (PENTING BANGET!)
+# ============================================
+# Kenapa: Ini kunci signing app, kalo bocor orang bisa
+# bikin APK palsu
+*.jks
+*.keystore
+key/
+keystore.properties
+# Gunakan keystore.properties.example sebagai panduan
+
+# ============================================
+# 5. SENSITIVE CONFIG (API Keys, Secrets)
+# ============================================
+# Kenapa: Credential & API keys harus rahasia
+# google-services.json  # Uncomment jika pakai Firebase
+# Gunakan google-services.json.example sebagai panduan
+
+# ============================================
+# 6. NATIVE BUILD
+# ============================================
+.externalNativeBuild/
+.cxx/
+cmake-build-*/
+
+# ============================================
+# 7. ANDROID PROFILING & LOGS
+# ============================================
+*.hprof
+*.log
+captures/
+output.json
+
+# ============================================
+# 8. MISC
+# ============================================
+*.swp
+*~
+.DS_Store
+.navigation/
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/

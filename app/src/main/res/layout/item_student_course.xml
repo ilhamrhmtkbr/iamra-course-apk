@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.student.courses.CoursesAdapter">
+
+    <ImageView
+        android:id="@id/course_image"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+        android:clipToOutline="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/course_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_xxs"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/text_l"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_image" />
+
+    <TextView
+        android:id="@+id/course_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_title" />
+
+
+    <TextView
+        android:id="@+id/button_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_m"
+        android:background="@drawable/bg_orange_radiusfull"
+        android:focusable="true"
+        android:fontFamily="@font/poppins_bold"
+        android:foreground="@drawable/ripple_trans_bg_radiusfull"
+        android:paddingHorizontal="@dimen/size_m"
+        android:paddingVertical="@dimen/size_xxs"
+        android:text="@string/review"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintEnd_toStartOf="@id/button_question"
+        app:layout_constraintTop_toBottomOf="@id/course_desc" />
+
+    <TextView
+        android:id="@+id/button_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_m"
+        android:background="@drawable/bg_green_radiusfull"
+        android:focusable="true"
+        android:fontFamily="@font/poppins_bold"
+        android:foreground="@drawable/ripple_trans_bg_radiusfull"
+        android:paddingHorizontal="@dimen/size_m"
+        android:paddingVertical="@dimen/size_xxs"
+        android:text="@string/question"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintEnd_toStartOf="@id/button_detail"
+        app:layout_constraintTop_toBottomOf="@id/course_desc" />
+
+    <TextView
+        android:id="@+id/button_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue_radiusfull"
+        android:focusable="true"
+        android:fontFamily="@font/poppins_bold"
+        android:foreground="@drawable/ripple_trans_bg_radiusfull"
+        android:paddingHorizontal="@dimen/size_m"
+        android:paddingVertical="@dimen/size_xxs"
+        android:text="@string/detail"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_desc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

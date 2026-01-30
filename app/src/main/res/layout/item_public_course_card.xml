@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_course"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_themefifth_radiusm"
+    android:elevation="3dp"
+    android:foreground="@drawable/ripple_trans_bg_radiusfull"
+    tools:context=".presentation.guest.courses.CoursesAdapter">
+
+    <ImageView
+        android:id="@+id/course_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+        android:clipToOutline="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/course_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_xxs"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingHorizontal="@dimen/size_m"
+        android:textSize="@dimen/text_l"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_image" />
+
+    <TextView
+        android:id="@+id/course_instructor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/size_m"
+        android:textColor="@color/link_color"
+        android:textSize="@dimen/text_s"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_title" />
+
+    <TextView
+        android:id="@+id/course_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/size_m"
+        android:text="★★★★★"
+        android:textColor="@color/orange_color"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_instructor" />
+
+    <TextView
+        android:id="@+id/course_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/size_m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_rating" />
+
+    <TextView
+        android:id="@+id/course_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_m"
+        android:layout_marginBottom="@dimen/size_m"
+        android:background="@drawable/bg_transblue_radiusfull"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/size_s"
+        android:paddingVertical="@dimen/size_xxs"
+        android:textColor="@color/blue_color"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

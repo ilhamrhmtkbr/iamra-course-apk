@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".presentation.guest.GuestActivity"
+    tools:openDrawer="start">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Fragment Content -->
+        <FrameLayout
+            android:id="@+id/fragment_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <!-- Custom Toolbar dengan Behavior -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.ilhamrhmtkbr.presentation.utils.behavior.ToolbarBehavior">
+
+            <ImageView
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="87dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/button_toggle_navigation"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_trans_bg_radiusfull"
+                android:padding="4dp"
+                android:src="@drawable/ic_public_navigation_menu"
+                app:layout_constraintBottom_toBottomOf="@id/search_course"
+                app:layout_constraintEnd_toStartOf="@id/search_course"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/search_course"
+                app:tint="#fff" />
+
+            <SearchView
+                android:id="@+id/search_course"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/size_s"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+                android:focusable="false"
+                android:iconifiedByDefault="false"
+                android:queryHint="@string/type_here"
+                app:layout_constraintEnd_toStartOf="@id/button_scan_certificate"
+                app:layout_constraintStart_toEndOf="@id/button_toggle_navigation"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/button_scan_certificate"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_trans_bg_radiusfull"
+                android:padding="4dp"
+                android:src="@drawable/ic_public_qr_code"
+                app:layout_constraintBottom_toBottomOf="@id/search_course"
+                app:layout_constraintEnd_toStartOf="@id/button_toggle_overflow"
+                app:layout_constraintStart_toEndOf="@id/search_course"
+                app:layout_constraintTop_toTopOf="@id/search_course"
+                app:tint="#fff" />
+
+            <ImageView
+                android:id="@+id/button_toggle_overflow"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_trans_bg_radiusfull"
+                android:padding="4dp"
+                android:src="@drawable/ic_public_overflow_menu"
+                app:layout_constraintBottom_toBottomOf="@id/search_course"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/button_scan_certificate"
+                app:layout_constraintTop_toTopOf="@id/search_course"
+                app:tint="#fff" />
+
+            <View
+                android:id="@+id/search_navigate_to_course"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/search_course"
+                app:layout_constraintEnd_toEndOf="@id/search_course"
+                app:layout_constraintStart_toStartOf="@id/search_course"
+                app:layout_constraintTop_toTopOf="@id/search_course" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Custom Bottom Nav dengan Behavior -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_nav_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clipToPadding="false"
+            android:paddingBottom="60dp"
+            app:layout_behavior="com.ilhamrhmtkbr.presentation.utils.behavior.BottomNavBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_s"
+                android:background="@drawable/navbar_bottom_background"
+                android:elevation="3dp"
+                android:paddingHorizontal="@dimen/size_m"
+                android:paddingVertical="@dimen/size_xs"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nav_home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navbar_bottom_item_selector"
+                    android:paddingVertical="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/nav_courses"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/logo_home"
+                        android:layout_width="@dimen/size_m"
+                        android:layout_height="@dimen/size_m"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_public_navbar_home"
+                        app:layout_constraintBottom_toTopOf="@id/text_home"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/activity_public_bottom_nav" />
+
+                    <TextView
+                        android:id="@+id/text_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="@string/home"
+                        android:textColor="@color/activity_public_bottom_nav"
+                        android:textSize="@dimen/text_xs"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/logo_home" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nav_courses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navbar_bottom_item_selector"
+                    android:paddingVertical="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/nav_certificates"
+                    app:layout_constraintStart_toEndOf="@+id/nav_home"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/logo_course"
+                        android:layout_width="@dimen/size_m"
+                        android:layout_height="@dimen/size_m"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_drawer_courses"
+                        app:layout_constraintBottom_toTopOf="@id/text_course"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/activity_public_bottom_nav" />
+
+                    <TextView
+                        android:id="@+id/text_course"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="@string/course"
+                        android:textColor="@color/activity_public_bottom_nav"
+                        android:textSize="@dimen/text_xs"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/logo_course" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nav_certificates"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navbar_bottom_item_selector"
+                    android:paddingVertical="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/nav_profile"
+                    app:layout_constraintStart_toEndOf="@id/nav_courses"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/logo_certificate"
+                        android:layout_width="@dimen/size_m"
+                        android:layout_height="@dimen/size_m"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_drawer_certificates"
+                        app:layout_constraintBottom_toTopOf="@id/text_certificate"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/activity_public_bottom_nav" />
+
+                    <TextView
+                        android:id="@+id/text_certificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="@string/certificate"
+                        android:textColor="@color/activity_public_bottom_nav"
+                        android:textSize="@dimen/text_xs"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/logo_certificate" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nav_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navbar_bottom_item_selector"
+                    android:paddingVertical="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/nav_certificates"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/logo_profile"
+                        android:layout_width="@dimen/size_m"
+                        android:layout_height="@dimen/size_m"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_drawer_profile"
+                        app:layout_constraintBottom_toTopOf="@id/text_profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/activity_public_bottom_nav" />
+
+                    <TextView
+                        android:id="@+id/text_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="@string/profile"
+                        android:textColor="@color/activity_public_bottom_nav"
+                        android:textSize="@dimen/text_xs"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/logo_profile" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header_common"
+        app:menu="@menu/drawer_public" />
+</androidx.drawerlayout.widget.DrawerLayout>

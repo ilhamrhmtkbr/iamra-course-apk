@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="bg_color">#EBEEF2</color>
+    <color name="transbg_color">#80EBEEF2</color>
+    <color name="second_bg_color">#F2F5F8</color>
+    <color name="third_bg_color">#F7F9FC</color>
+    <color name="fourth_bg_color">#FCFDFE</color>
+    <color name="fifth_bg_color">#FFFFFF</color>
+
+    <color name="text_color">#1A1C1E</color>
+    <color name="transtext_color">#801A1C1E</color>
+
+    <color name="link_color">#707F8A</color>
+    <color name="translink_color">#80707F8A</color>
+
+    <color name="border_color">#DDE2E8</color>
+
+    <color name="red_color">#D93025</color>
+    <color name="transred_color">#26D93025</color>
+    <color name="orange_color">#E37400</color>
+    <color name="transorange_color">#26E37400</color>
+    <color name="green_color">#188038</color>
+    <color name="transgreen_color">#26188038</color>
+    <color name="blue_color">#1967D2</color>
+    <color name="transblue_color">#261967D2</color>
+
+    <color name="wa_bg_deep_color">#0a1014</color>
+    <color name="wa_bg_color">#0c1317</color>
+    <color name="wa_bar_color">#202c33</color>
+    <color name="wa_dark_color">#1c252a</color>
+    <color name="wa_dark_hover_color">#222b32</color>
+    <color name="wa_white_color">#AEBAC1</color>
+    <color name="wa_text_color">#E9EDEF</color>
+    <color name="wa_grey_color">#343c40</color>
+    <color name="wa_border_color">#2F3B43</color>
+    <color name="wa_green_color">#235D4B</color>
+    <color name="wa_green_light_color">#00B45A</color>
+</resources>

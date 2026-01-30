@@ -1,0 +1,224 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    tools:context=".presentation.member.additionalinfo.AdditionalInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_m"
+        android:background="@drawable/bg_themethird_radiusm"
+        android:padding="@dimen/size_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/preview_image"
+            android:layout_width="111dp"
+            android:layout_height="111dp"
+            android:layout_marginBottom="@dimen/size_m"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:clipToOutline="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/error_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/error_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="@dimen/size_xxs"
+            android:fontFamily="@font/poppins_light"
+            android:textAlignment="textStart"
+            android:textColor="@color/red_color"
+            android:textSize="@dimen/text_s"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/button_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/preview_image" />
+
+        <TextView
+            android:id="@+id/button_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_l"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolorblue"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/size_s"
+            android:paddingVertical="@dimen/size_xs"
+            android:text="@string/choose_image"
+            android:textColor="@color/blue_color"
+            android:textSize="@dimen/text_s"
+            app:layout_constraintBottom_toTopOf="@+id/input_first_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/error_image" />
+
+        <com.ilhamrhmtkbr.presentation.utils.component.InputText
+            android:id="@+id/input_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_l"
+            app:custom_label="@string/first_name"
+            app:layout_constraintBottom_toTopOf="@+id/input_middle_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_image" />
+
+        <com.ilhamrhmtkbr.presentation.utils.component.InputText
+            android:id="@+id/input_middle_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_l"
+            app:custom_label="@string/middle_name"
+            app:layout_constraintBottom_toTopOf="@+id/input_last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_first_name" />
+
+        <com.ilhamrhmtkbr.presentation.utils.component.InputText
+            android:id="@+id/input_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_l"
+            app:custom_label="@string/last_name"
+            app:layout_constraintBottom_toTopOf="@+id/input_box_dob"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_last_name" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/input_box_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/input_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_last_name"
+            >
+            <TextView
+                android:id="@+id/label_input_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/date_of_birth"
+                android:textColor="@color/link_color"
+                android:textSize="@dimen/text_s"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/input_dob"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/input_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="..."
+                android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+                android:clickable="true"
+                android:focusable="false"
+                android:inputType="text"
+                android:padding="@dimen/size_s"
+                android:textColor="@color/text_color"
+                android:textCursorDrawable="@drawable/bg_cursor_text"
+                app:layout_constraintBottom_toTopOf="@+id/error_dob"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_input_dob"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/error_dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/poppins_light"
+                android:text=" "
+                android:visibility="gone"
+                android:textAlignment="textStart"
+                android:textColor="@color/red_color"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_dob" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.ilhamrhmtkbr.presentation.utils.component.InputText
+            android:id="@+id/input_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_l"
+            app:custom_label="@string/address"
+            app:layout_constraintBottom_toTopOf="@+id/button_open_map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_box_dob" />
+
+        <TextView
+            android:id="@+id/button_open_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_xxs"
+            android:layout_marginBottom="@dimen/size_m"
+            android:background="@drawable/bg_blue_radiusfull"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:foreground="@drawable/ripple_trans_bg_radiusfull"
+            android:paddingHorizontal="@dimen/size_m"
+            android:paddingVertical="@dimen/size_xxs"
+            android:text="@string/open_map"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_s"
+            app:layout_constraintBottom_toTopOf="@id/button_submit_additional"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_address" />
+
+        <com.ilhamrhmtkbr.presentation.utils.component.ButtonSubmit
+            android:id="@+id/button_submit_additional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_open_map" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_themefirst_radiusm_bordercolordefault"
+            android:indeterminateTint="@color/blue_color"
+            android:padding="@dimen/size_m"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

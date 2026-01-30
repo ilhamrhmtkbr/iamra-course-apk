@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_student_navigation"
+    app:startDestination="@+id/nav_profile"
+    >
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.ilhamrhmtkbr.presentation.student.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_student_profile" />
+
+    <fragment
+        android:id="@+id/nav_cart"
+        android:name="com.ilhamrhmtkbr.presentation.student.carts.CartFragment"
+        android:label="@string/carts"
+        tools:layout="@layout/fragment_student_carts" />
+
+    <fragment
+        android:id="@+id/nav_courses"
+        android:name="com.ilhamrhmtkbr.presentation.student.courses.CoursesFragment"
+        android:label="@string/courses"
+        tools:layout="@layout/fragment_student_courses" />
+
+    <fragment
+        android:id="@+id/nav_sections"
+        android:name="com.ilhamrhmtkbr.presentation.student.sections.SectionsFragment"
+        android:label="Sections"
+        tools:layout="@layout/fragment_student_sections" />
+
+    <fragment
+        android:id="@+id/nav_lessons"
+        android:name="com.ilhamrhmtkbr.presentation.student.lessons.LessonsFragment"
+        android:label="Lessons"
+        tools:layout="@layout/fragment_student_lessons" />
+
+    <fragment
+        android:id="@+id/nav_lesson"
+        android:name="com.ilhamrhmtkbr.presentation.student.lesson.LessonFragment"
+        android:label="Lesson"
+        tools:layout="@layout/fragment_student_lesson" />
+
+    <fragment
+        android:id="@+id/nav_certificates"
+        android:name="com.ilhamrhmtkbr.presentation.student.certificates.CertificatesFragment"
+        android:label="@string/certificates"
+        tools:layout="@layout/fragment_student_certificates" />
+
+    <fragment
+        android:id="@+id/nav_certificate_detail"
+        android:name="com.ilhamrhmtkbr.presentation.student.certificatedetail.CertificateDetailFragment"
+        android:label="Certificate Detail"
+        tools:layout="@layout/fragment_student_certificate_detail" />
+
+    <fragment
+        android:id="@+id/nav_progresses"
+        android:name="com.ilhamrhmtkbr.presentation.student.progresses.ProgressesFragment"
+        android:label="@string/progresses"
+        tools:layout="@layout/fragment_student_progresses" />
+
+    <fragment
+        android:id="@+id/nav_progress_detail"
+        android:name="com.ilhamrhmtkbr.presentation.student.progress.ProgressFragment"
+        android:label="Progress"
+        tools:layout="@layout/fragment_student_progess" />
+
+    <fragment
+        android:id="@+id/nav_questions"
+        android:name="com.ilhamrhmtkbr.presentation.student.questions.QuestionsFragment"
+        android:label="@string/questions"
+        tools:layout="@layout/fragment_student_questions" />
+
+    <fragment
+        android:id="@+id/nav_question"
+        android:name="com.ilhamrhmtkbr.presentation.student.question.QuestionFragment"
+        android:label="Question"
+        tools:layout="@layout/fragment_student_question" />
+
+    <fragment
+        android:id="@+id/nav_reviews"
+        android:name="com.ilhamrhmtkbr.presentation.student.reviews.ReviewsFragment"
+        android:label="@string/reviews"
+        tools:layout="@layout/fragment_student_reviews" />
+
+    <fragment
+        android:id="@+id/nav_review"
+        android:name="com.ilhamrhmtkbr.presentation.student.review.ReviewFragment"
+        android:label="Review Detail"
+        tools:layout="@layout/fragment_student_review" />
+
+    <fragment
+        android:id="@+id/nav_transactions"
+        android:name="com.ilhamrhmtkbr.presentation.student.transactions.TransactionsFragment"
+        android:label="@string/transactions"
+        tools:layout="@layout/fragment_student_transactions" />
+
+    <fragment
+        android:id="@+id/nav_transactions_store"
+        android:name="com.ilhamrhmtkbr.presentation.student.transactionstore.TransactionStoreFragment"
+        android:label="Transactions Store"
+        tools:layout="@layout/fragment_student_transaction_store" />
+
+    <fragment
+        android:id="@+id/nav_transactions_detail"
+        android:name="com.ilhamrhmtkbr.presentation.student.transactiondetail.TransactionDetailFragment"
+        android:label="Transaction Detail"
+        tools:layout="@layout/fragment_student_transaction_detail" />
+</navigation>

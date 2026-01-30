@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_member_navigation"
+    app:startDestination="@+id/nav_chat_group">
+
+    <fragment
+        android:id="@+id/nav_chat_group"
+        android:name="com.ilhamrhmtkbr.presentation.forum.group.GroupFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/fragment_forum_group" />
+
+    <fragment
+        android:id="@+id/nav_chat_message"
+        android:name="com.ilhamrhmtkbr.presentation.forum.message.MessageFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/fragment_forum_chat"/>
+</navigation>

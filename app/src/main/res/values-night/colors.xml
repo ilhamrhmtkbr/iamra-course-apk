@@ -1,0 +1,27 @@
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="bg_color">#1A1C1E</color>
+    <color name="transbg_color">#331A1C1E</color>
+    <color name="second_bg_color">#202226</color>
+    <color name="third_bg_color">#26292E</color>
+    <color name="fourth_bg_color">#2D3137</color>
+    <color name="fifth_bg_color">#353A42</color>
+
+    <color name="text_color">#E8EAED</color>
+    <color name="transtext_color">#80E8EAED</color>
+
+    <color name="link_color">#707F8A</color>
+    <color name="translink_color">#80707F8A</color>
+
+    <color name="border_color">#3F444C</color>
+
+    <color name="red_color">#F28B82</color>
+    <color name="transred_color">#33F28B82</color>
+    <color name="orange_color">#FDD663</color>
+    <color name="transorange_color">#33FDD663</color>
+    <color name="green_color">#81C995</color>
+    <color name="transgreen_color">#3381C995</color>
+    <color name="blue_color">#8AB4F8</color>
+    <color name="transblue_color">#338AB4F8</color>
+</resources>

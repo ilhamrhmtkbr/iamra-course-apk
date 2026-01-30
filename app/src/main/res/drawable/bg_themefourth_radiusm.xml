@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/fourth_bg_color" /> <!-- warna background -->
+
+    <corners android:radius="@dimen/radius_m" /> <!-- border radius -->
+</shape>

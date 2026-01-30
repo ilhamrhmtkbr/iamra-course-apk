@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.student.transactionstore.TransactionStoreFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/size_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="111dp">
+
+            <ImageView
+                android:id="@+id/courseImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+                android:clipToOutline="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/courseTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_s"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/text_l"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/courseDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseImage" />
+
+            <TextView
+                android:id="@+id/courseDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/size_xx"
+                app:layout_constraintBottom_toTopOf="@id/courseStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseTitle" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/courseStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_s"
+                app:custom_title="@string/status"
+                app:layout_constraintBottom_toTopOf="@id/coursePrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseDesc" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/coursePrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_s"
+                app:custom_title="@string/price"
+                app:layout_constraintBottom_toTopOf="@id/courseLevel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseStatus" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/courseLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_s"
+                app:custom_title="@string/level"
+                app:layout_constraintBottom_toTopOf="@id/courseId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coursePrice" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.InputText
+                android:id="@+id/courseId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_xxxx"
+                app:custom_label="Id"
+                app:layout_constraintBottom_toTopOf="@id/button_check_coupon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseLevel" />
+
+            <TextView
+                android:id="@+id/button_check_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_xs"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_trans_bg_radiusfull"
+                android:text="@string/check_coupon"
+                android:textColor="@color/blue_color"
+                app:layout_constraintBottom_toTopOf="@id/coupon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseId" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_s"
+                android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+                android:orientation="vertical"
+                android:padding="@dimen/size_s"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_check_coupon">
+
+                <TextView
+                    android:id="@+id/text_discount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/discount"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@id/text_max_redemptions"
+                    app:layout_constraintEnd_toStartOf="@id/discount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toBottomOf="@id/text_discount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/text_discount"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_max_redemptions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/max_redemptions"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toTopOf="@+id/text_expiry_date"
+                    app:layout_constraintEnd_toStartOf="@id/max_redemptions"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_discount" />
+
+                <TextView
+                    android:id="@+id/max_redemptions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/text_max_redemptions"
+                    app:layout_constraintTop_toTopOf="@id/text_max_redemptions" />
+
+                <TextView
+                    android:id="@+id/text_expiry_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/expiry_date"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/expiry_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_max_redemptions" />
+
+                <TextView
+                    android:id="@+id/expiry_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/text_expiry_date"
+                    app:layout_constraintTop_toBottomOf="@id/text_max_redemptions" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.ilhamrhmtkbr.presentation.utils.component.ButtonSubmit
+                android:id="@+id/button_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_xxxx"
+                app:custom_text="@string/buy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coupon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_themefirst_radiusm_bordercolordefault"
+            android:indeterminateTint="@color/blue_color"
+            android:padding="@dimen/size_m"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

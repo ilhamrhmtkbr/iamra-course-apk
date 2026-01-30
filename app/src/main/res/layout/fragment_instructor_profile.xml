@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.instructor.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_m">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="111dp"
+            android:layout_height="111dp"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:clipToOutline="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/summary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/size_m"
+            android:text=" "
+            app:layout_constraintBottom_toTopOf="@id/box_answers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_answers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:orientation="vertical"
+            android:padding="@dimen/size_xxs"
+            app:layout_constraintBottom_toTopOf="@id/box_reviews"
+            app:layout_constraintEnd_toStartOf="@id/box_coupons"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/summary">
+
+            <TextView
+                android:id="@+id/text_answers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/answers"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_custom_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blue_color" />
+
+            <ProgressBar
+                android:id="@+id/answers_loading"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:indeterminateTint="@color/blue_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_answers" />
+
+            <TextView
+                android:id="@+id/answers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_answers" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_coupons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_xs"
+            android:layout_weight="1"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:orientation="vertical"
+            android:padding="@dimen/size_xxs"
+            app:layout_constraintBottom_toBottomOf="@id/box_answers"
+            app:layout_constraintEnd_toStartOf="@id/box_earnings"
+            app:layout_constraintStart_toEndOf="@id/box_answers"
+            app:layout_constraintTop_toTopOf="@id/box_answers">
+
+            <TextView
+                android:id="@+id/text_coupons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/coupons"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_custom_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blue_color" />
+
+            <ProgressBar
+                android:id="@+id/coupons_loading"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:indeterminateTint="@color/blue_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_coupons" />
+
+            <TextView
+                android:id="@+id/coupons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_coupons" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_earnings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:orientation="vertical"
+            android:padding="@dimen/size_xxs"
+            app:layout_constraintBottom_toBottomOf="@id/box_coupons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/box_coupons"
+            app:layout_constraintTop_toTopOf="@id/box_coupons">
+
+            <TextView
+                android:id="@+id/text_earnings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/earnings"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_custom_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blue_color" />
+
+            <ProgressBar
+                android:id="@+id/earnings_loading"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:indeterminateTint="@color/blue_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_earnings" />
+
+            <TextView
+                android:id="@+id/earnings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_earnings" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_reviews"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_s"
+            android:layout_weight="1"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:orientation="vertical"
+            android:padding="@dimen/size_xxs"
+            app:layout_constraintEnd_toStartOf="@id/box_courses_likes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/box_answers">
+
+            <TextView
+                android:id="@+id/text_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reviews"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_custom_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blue_color" />
+
+            <ProgressBar
+                android:id="@+id/reviews_loading"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:indeterminateTint="@color/blue_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_reviews" />
+
+            <TextView
+                android:id="@+id/reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_reviews" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_courses_likes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_xs"
+            android:layout_weight="1"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:orientation="vertical"
+            android:padding="@dimen/size_xxs"
+            app:layout_constraintBottom_toBottomOf="@id/box_reviews"
+            app:layout_constraintEnd_toStartOf="@id/box_socials"
+            app:layout_constraintStart_toEndOf="@id/box_reviews"
+            app:layout_constraintTop_toTopOf="@+id/box_reviews">
+
+            <TextView
+                android:id="@+id/text_courses_likes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/courses_likes"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_custom_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blue_color" />
+
+            <ProgressBar
+                android:id="@+id/courses_likes_loading"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:indeterminateTint="@color/blue_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_courses_likes" />
+
+            <TextView
+                android:id="@+id/courses_likes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_courses_likes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_socials"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+            android:orientation="vertical"
+            android:padding="@dimen/size_xxs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/box_courses_likes"
+            app:layout_constraintTop_toTopOf="@id/box_courses_likes">
+
+            <TextView
+                android:id="@+id/text_socials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/socials"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintBottom_toTopOf="@id/socials"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_custom_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blue_color" />
+
+            <ProgressBar
+                android:id="@+id/socials_loading"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:indeterminateTint="@color/blue_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_socials" />
+
+            <TextView
+                android:id="@+id/socials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_socials" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text_biography"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_l"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/biography"
+            android:textSize="@dimen/text_l"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/box_reviews" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_m"
+            android:background="@drawable/bg_themethird_radiusm"
+            android:padding="@dimen/size_m"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_biography">
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:custom_title="@string/username"
+                app:layout_constraintBottom_toTopOf="@id/full_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                app:custom_title="@string/full_name"
+                app:layout_constraintBottom_toTopOf="@id/email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/username" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                app:custom_title="@string/email"
+                app:layout_constraintBottom_toTopOf="@id/role"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/full_name" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                app:custom_title="@string/role"
+                app:layout_constraintBottom_toTopOf="@id/address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                app:custom_title="@string/address"
+                app:layout_constraintBottom_toTopOf="@id/dob"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/role" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                app:custom_title="@string/date_of_birth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.guest.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="87dp"
+        android:paddingBottom="50dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fifth_bg_color"
+            android:padding="@dimen/size_m"
+            android:paddingBottom="@dimen/size_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/profile_img"
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                android:src="@drawable/ic_drawer_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/text_color" />
+
+            <TextView
+                android:id="@+id/profile_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_m"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingEnd="@dimen/size_s"
+                android:text="ilhmrhmtkbr"
+                android:textColor="@color/link_color"
+                android:textSize="@dimen/text_xs"
+                app:layout_constraintStart_toEndOf="@+id/profile_img"
+                app:layout_constraintTop_toBottomOf="@id/profile_email" />
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_m"
+                android:text="ilhamrhmtkbr@gmail.com"
+                android:textSize="@dimen/text_xs"
+                app:layout_constraintStart_toEndOf="@id/profile_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Ilham Rahmat Akbar"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/profile_username"
+                app:layout_constraintTop_toBottomOf="@id/profile_username" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_rv_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_m"
+            android:layout_marginTop="@dimen/size_m"
+            android:background="@drawable/bg_themefourth_radiusm"
+            android:clipToPadding="false"
+            android:padding="@dimen/size_s"
+            app:layout_constraintBottom_toTopOf="@id/rv_adv_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_user">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/scroll_indicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.ScrollIndicator
+                android:id="@+id/scroll_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_setting" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <com.google.android.material.button.MaterialButtonToggleGroup-->
+        <!--            android:id="@+id/toggle_lang"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/size_s"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/card_user"-->
+        <!--            app:selectionRequired="true"-->
+        <!--            app:singleSelection="true">-->
+
+        <!--            <com.google.android.material.button.MaterialButton-->
+        <!--                android:id="@+id/btn_lang_id"-->
+        <!--                style="@style/Custom.OnlineCourse.MaterialButton"-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="id"-->
+        <!--                android:textSize="@dimen/text_s"-->
+        <!--                app:iconSize="@dimen/size_m"-->
+        <!--                app:iconTint="@color/text_color" />-->
+
+        <!--            <com.google.android.material.button.MaterialButton-->
+        <!--                android:id="@+id/btn_lang_en"-->
+        <!--                style="@style/Custom.OnlineCourse.MaterialButton"-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="en"-->
+        <!--                android:textSize="@dimen/text_s"-->
+        <!--                app:iconSize="@dimen/size_m"-->
+        <!--                app:iconTint="@color/text_color" />-->
+
+        <!--        </com.google.android.material.button.MaterialButtonToggleGroup>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_adv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_m"
+            android:background="@color/third_bg_color"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/box_rv_setting" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_adv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/third_bg_color"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_adv_1" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/info_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_m"
+            android:background="@color/fourth_bg_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_adv_2"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabTextAppearance="@style/Custom.OnlineCourse.TabTextAppearance" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/info_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_m"
+            android:layout_marginTop="@dimen/size_s"
+            android:layout_marginBottom="111dp"
+            android:background="@drawable/bg_themefourth_radiusm"
+            android:clipToPadding="false"
+            android:padding="@dimen/size_s"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_tab" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

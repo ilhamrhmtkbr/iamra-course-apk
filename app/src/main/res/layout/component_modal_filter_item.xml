@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/option"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/size_s"
+    android:paddingHorizontal="@dimen/size_m"
+    android:background="@drawable/bg_themefifth_radiuss_bordercolordefault"
+    android:textSize="@dimen/text_s"
+    android:textAllCaps="true"
+    android:layout_marginBottom="@dimen/size_xs"
+    android:fontFamily="@font/poppins_medium"
+    tools:context=".core.utils.notif.ModalFilter" />

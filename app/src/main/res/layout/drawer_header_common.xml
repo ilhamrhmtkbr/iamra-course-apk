@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+
+    <ImageView
+        android:layout_width="900dp"
+        android:layout_height="540dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_drawer_header"
+        android:translationX="57dp"
+        android:translationY="-370dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/app_name"
+        android:paddingStart="@dimen/size_m"
+        android:layout_marginTop="@dimen/size_xxxx"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginStart="@dimen/size_s"
+        android:text="@string/app_name"
+        android:textColor="@color/fifth_bg_color"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Belajar Cepat, Hasil Hebat."
+        android:textColor="@color/fifth_bg_color"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintStart_toStartOf="@id/text_title"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

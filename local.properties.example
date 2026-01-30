@@ -1,0 +1,35 @@
+# SDK Location (auto-generated oleh Android Studio, jangan diubah)
+sdk.dir=C\:\\Users\\YourUsername\\AppData\\Local\\Android\\Sdk
+
+# ==================== SENSITIVE KEYS ====================
+# Dapatkan dari Google Cloud Console
+google.id=YOUR_GOOGLE_CLIENT_ID_HERE
+
+# Dapatkan dari Midtrans Dashboard
+midtrans.client.key=YOUR_MIDTRANS_CLIENT_KEY_HERE
+
+# Dapatkan dari Reverb/Laravel Echo Server configuration
+reverb.user.app.key=YOUR_REVERB_USER_APP_KEY
+reverb.forum.app.key=YOUR_REVERB_FORUM_APP_KEY
+
+# ==================== DEBUG URLs ====================
+# Ganti dengan IP local development kamu
+debug.instructor.image.url=http://YOUR_LOCAL_IP/instructor-api/v1/storage/
+debug.user.image.url=http://YOUR_LOCAL_IP/user-api/v1/storage/
+
+debug.public.api=http://YOUR_LOCAL_IP/public-api/v1/
+debug.user.api=http://YOUR_LOCAL_IP/user-api/v1/
+debug.student.api=http://YOUR_LOCAL_IP/student-api/v1/
+debug.instructor.api=http://YOUR_LOCAL_IP/instructor-api/v1/
+debug.forum.api=http://YOUR_LOCAL_IP/forum-api/v1/
+
+# ==================== RELEASE URLs ====================
+# URL production (bisa sama dengan debug atau beda)
+release.instructor.image.url=https://YOUR_PRODUCTION_DOMAIN/instructor-api/v1/storage/
+release.user.image.url=https://YOUR_PRODUCTION_DOMAIN/user-api/v1/storage/
+
+release.public.api=https://api-public.YOUR_DOMAIN/v1
+release.user.api=https://api-user.YOUR_DOMAIN/v1
+release.student.api=https://api-student.YOUR_DOMAIN/v1
+release.instructor.api=https://api-instructor.YOUR_DOMAIN/v1
+release.forum.api=https://api-forum.YOUR_DOMAIN/v1

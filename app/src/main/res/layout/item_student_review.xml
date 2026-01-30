@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+    android:padding="@dimen/size_m"
+    tools:context=".presentation.student.reviews.ReviewsAdapter">
+
+    <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+        android:id="@+id/course_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:custom_title="@string/course_title"
+        app:layout_constraintBottom_toTopOf="@id/course_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+        android:id="@+id/course_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/size_s"
+        app:custom_title="@string/course_description"
+        app:layout_constraintBottom_toTopOf="@id/course_review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_title" />
+
+    <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+        android:id="@+id/course_review"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:custom_title="@string/review"
+        app:layout_constraintBottom_toTopOf="@id/box_course_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_desc" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_course_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_s"
+        android:background="@drawable/bg_themefifth_radiusm"
+        android:padding="@dimen/size_s"
+        app:layout_constraintBottom_toTopOf="@+id/created_at"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_review">
+
+        <TextView
+            android:id="@+id/text_course_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/rating"
+            android:textSize="@dimen/text_s"
+            app:layout_constraintBottom_toTopOf="@id/course_rating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/course_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/border_color"
+            android:progressTint="@color/blue_color"
+            android:rating="0"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:secondaryProgressTint="@color/blue_color"
+            android:stepSize="1.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_course_rating" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/created_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_s"
+        android:background="@android:color/transparent"
+        android:textAlignment="textEnd"
+        android:textColor="@color/link_color"
+        android:textSize="@dimen/text_xs"
+        app:layout_constraintBottom_toTopOf="@id/button_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_course_rating" />
+
+    <TextView
+        android:id="@+id/button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_blue_radiusfull"
+        android:focusable="true"
+        android:fontFamily="@font/poppins_bold"
+        android:foreground="@drawable/ripple_trans_bg_radiusfull"
+        android:paddingHorizontal="@dimen/size_m"
+        android:paddingVertical="@dimen/size_xxs"
+        android:text="@string/edit"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/created_at" />
+</androidx.constraintlayout.widget.ConstraintLayout>

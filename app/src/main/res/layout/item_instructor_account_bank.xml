@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bank_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:fontFamily="@font/poppins_medium"
+    android:foreground="@drawable/ripple_trans_bg_radiusfull"
+    android:paddingVertical="@dimen/size_m"
+    android:textSize="@dimen/text_s"
+    tools:context=".presentation.instructor.account.AccountBanksAdapter" />

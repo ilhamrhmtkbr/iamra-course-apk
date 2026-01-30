@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.instructor.coupon.CouponFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/size_m"
+            android:paddingTop="@dimen/size_m"
+            android:paddingBottom="111dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/coupon_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_themethird_radiusm"
+                android:padding="@dimen/size_m"
+                app:layout_constraintBottom_toTopOf="@id/box_form"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/button_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:fontFamily="@font/poppins_bold"
+                    android:foreground="@drawable/ripple_trans_bg_radiusfull"
+                    android:paddingStart="@dimen/size_m"
+                    android:paddingBottom="@dimen/size_s"
+                    android:text="@string/delete"
+                    android:textColor="@color/red_color"
+                    android:textSize="@dimen/text_s"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                    android:id="@+id/course_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:custom_title="@string/title"
+                    app:layout_constraintBottom_toTopOf="@id/course_status"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/button_delete" />
+
+                <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+                    android:id="@+id/course_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_s"
+                    app:custom_title="@string/status"
+                    app:layout_constraintBottom_toTopOf="@id/box_detail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/course_title" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/box_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_m"
+                    android:background="@drawable/bg_themefourth_radiusm"
+                    android:padding="@dimen/size_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/course_status">
+
+                    <TextView
+                        android:id="@+id/text_discount"
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/discount"
+                        android:textSize="@dimen/text_s"
+                        app:layout_constraintBottom_toTopOf="@id/text_max_redemptions"
+                        app:layout_constraintEnd_toStartOf="@id/discount"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/discount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:textSize="@dimen/text_s"
+                        app:layout_constraintBottom_toBottomOf="@id/text_discount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/text_discount"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_max_redemptions"
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/size_s"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/max_redemptions"
+                        android:textSize="@dimen/text_s"
+                        app:layout_constraintBottom_toTopOf="@id/text_expiry_date"
+                        app:layout_constraintEnd_toStartOf="@id/max_redemptions"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/text_discount" />
+
+                    <TextView
+                        android:id="@+id/max_redemptions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:textSize="@dimen/text_s"
+                        app:layout_constraintBottom_toBottomOf="@id/text_max_redemptions"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/text_max_redemptions"
+                        app:layout_constraintTop_toTopOf="@id/text_max_redemptions" />
+
+                    <TextView
+                        android:id="@+id/text_expiry_date"
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/expiry_date"
+                        android:textSize="@dimen/text_s"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/expiry_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/text_max_redemptions" />
+
+                    <TextView
+                        android:id="@+id/expiry_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:textSize="@dimen/text_s"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/text_expiry_date"
+                        app:layout_constraintTop_toTopOf="@id/text_expiry_date" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/box_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_x"
+                android:layout_marginBottom="@dimen/size_m"
+                android:background="@drawable/bg_themethird_radiusm"
+                android:padding="@dimen/size_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coupon_detail">
+
+                <TextView
+                    android:id="@+id/form_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_s"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/text_x"
+                    app:layout_constraintBottom_toTopOf="@id/input_discount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.ilhamrhmtkbr.presentation.utils.component.InputText
+                    android:id="@+id/input_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:custom_label="@string/discount"
+                    app:layout_constraintBottom_toTopOf="@id/input_max_redemptions"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/form_type" />
+
+                <com.ilhamrhmtkbr.presentation.utils.component.InputText
+                    android:id="@+id/input_max_redemptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_m"
+                    app:custom_label="@string/max_redemptions"
+                    app:layout_constraintBottom_toTopOf="@id/input_expiry_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/input_discount" />
+
+                <com.ilhamrhmtkbr.presentation.utils.component.InputText
+                    android:id="@+id/input_expiry_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_m"
+                    app:custom_label="@string/expiry_date"
+                    app:layout_constraintBottom_toTopOf="@id/button_submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/input_max_redemptions" />
+
+                <com.ilhamrhmtkbr.presentation.utils.component.ButtonSubmit
+                    android:id="@+id/button_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_l"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/input_expiry_date" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_themefirst_radiusm_bordercolordefault"
+                android:indeterminateTint="@color/blue_color"
+                android:padding="@dimen/size_m"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

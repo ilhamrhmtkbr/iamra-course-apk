@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.gstatic.com/devrel-devsite/prod/v6dcfc5a6ab74baade852b535c8a876ff20ade102b870fd5f49da5da2dbf570bd/android/images/favicon.svg">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/iamra-css-mongo@latest/dist/style.css"/>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <title>Docs</title>
+    <style>
+        @font-face {
+          font-family: Bold;
+          src: url("./font/Mulish-Bold.ttf");
+        }
+        @font-face {
+          font-family: Light;
+          src: url("./font/Mulish-Light.ttf");
+        }
+        @font-face {
+          font-family: Medium;
+          src: url("./font/Mulish-Medium.ttf");
+        }
+        @font-face {
+          font-family: Regular;
+          src: url("./font/Mulish-Regular.ttf");
+        }
+        .mobile-phone {
+          margin: 2rem auto;
+          padding: 10px 10px 10px;
+          width: 253px;
+          height: max-content;
+          border-radius: 20px;
+          background-color: #0F0E0E;
+        }
+        .screen {
+          width: 100%;
+          height: 100%;
+          border-radius: 17px;
+          overflow-y: auto;
+          background-color: #0F0E0E;
+        }
+        .brove {
+          width: 35px;
+          height: 10px;
+          background: #2B2A2A;
+          position: absolute;
+          margin: 0 109px;
+          border-radius: 0 0 20px 20px;
+        }
+        .speaker {
+          width: 10px;
+          height: 5px;
+          background: #d2d2d2;
+          display: block;
+          margin: auto;
+          border-radius: 20px;
+        }
+        /* Owl Carousel Custom Styling */
+        .owl-carousel {
+          position: relative;
+          padding-bottom: 60px; /* Space for dots */
+        }
+
+        /* Navigation Arrows */
+        .owl-carousel .owl-nav {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          transform: translateY(-50%);
+          display: flex;
+          justify-content: space-between;
+          pointer-events: none;
+        }
+
+        .owl-carousel .owl-nav button {
+          pointer-events: all;
+          background: rgba(0, 0, 0, 0.5) !important;
+          color: white !important;
+          font-size: 30px !important;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+
+        .owl-carousel .owl-nav button:hover {
+          background: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+          margin-left: 10px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+          margin-right: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .mobile-phone {
+            width: 300px;
+            margin-top: 100px;
+          }
+
+          .owl-carousel .owl-nav button {
+            width: 40px;
+            height: 40px;
+            font-size: 24px !important;
+          }
+
+          .owl-carousel {
+            padding-bottom: 50px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .mobile-phone {
+            width: 280px;
+            margin-top: 80px;
+          }
+
+          .owl-carousel .owl-nav button {
+            width: 35px;
+            height: 35px;
+            font-size: 20px !important;
+          }
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+</head>
+<body>
+<input class="input-is-sidebar-active" style="display: none" type="checkbox" id="is-sidebar-active">
+<header>
+    <p class="example-button-change-theme cursor-pointer" onclick="changeTheme()">Dark Mode</p>
+    <div class='get-menu' onclick="showMenu()">
+        <svg id='get-menu' viewBox="0 0 100 100">
+            <path class="line line1"
+                  d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
+            <path class="line line2" d="M 20,50 H 80"/>
+            <path class="line line3"
+                  d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
+        </svg>
+    </div>
+    <div class="navigation">
+        <a class="hover-progress active" href="#">Docs</a>
+    </div>
+</header>
+<svg width="0" height="0" class="hidden">
+    <symbol xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 48 48" id="feature">
+        <path d="M15.71 14.931l-2.387-7.787-8.032-1.868-1.193 1.273.022.019.007-.007.175.161.001.001 5.049 4.642v2.564l-2.822.503-5.099-4.69-.202-.133L.02 10.898l2.464 7.854 7.908 1.899 21.99 22.073 5.453-5.434L16.35 15.724zM6.412 37.29l5.455 5.432 8.216-8.241-5.435-5.453zM47.98 18.694l-3.422-3.483-.989.972-4.086-4.101c-8.017-8.204-16.676-6.609-16.676-6.609l7.66 7.688-6.283 6.302 5.434 5.453 6.283-6.302 2.569 2.58-.975.958 3.421 3.482.999-.981.065.064 5.064-5.045-.031-.03.967-.948z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" id="hide">
+        <path d="M20 24H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h16c2.2 0 4 1.8 4 4v16c0 2.2-1.8 4-4 4zM4 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H4z"></path>
+        <path d="M8 24a.94.94 0 0 1-1-1V1a.94.94 0 0 1 1-1 .94.94 0 0 1 1 1v22a.94.94 0 0 1-1 1zm6-11c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l3-3c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-3 3c-.2.2-.4.3-.7.3z"></path>
+        <path d="M17 16c-.3 0-.5-.1-.7-.3l-3-3c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l3 3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 100 100" id="role">
+        <path d="M64.9 47.4c-8.2 0-15 6.7-15 15 0 8.2 6.7 15 15 15a14.98 14.98 0 0 0 15-15c0-8.3-6.8-15-15-15zm7.3 13.1l-2.8 2.8c-.3.3-.4.6-.4.8l.7 4.2c.2 1.2-.9.5-.9.5L65.4 67c-.5-.3-1 0-1 0l-3.5 1.8c-.9.5-.9 0-.9-.4l.7-3.9c.1-.8-.3-1.1-.3-1.2l-2.5-2.4-.3-.3c-.3-.3-.5-.8.6-1l3.5-.5c.5-.1.8-.3.9-.5l1.9-3.9c.1-.3.5-.6.9.2l1.9 3.8c.1.2.4.3.6.4h.3l3.7.5h.1c.2.1.9.3.2.9z"></path>
+        <path d="M48.9 77.2c1 0 1.6-1.2 1-2-3.2-3.6-5-8.2-5-13 0-3.4 1.1-7.2 2.9-10.2 2.1-3.6 4.5-5.1 6.4-7.9 3.1-4.6 3.7-11.2 1.7-16.2-2-5.1-6.7-8.1-12.2-8s-10 3.5-11.7 8.6c-2 5.6-1.1 12.4 3.4 16.6 1.9 1.7 3.5 4.4 2.6 7-.2.5-.8 1.3-2.2 1.9-5.7 2.5-11.5 5.5-14.1 9.7-.5.8-1.5 2.8-1.6 5.6h0c0 .7 0 1.3.1 2.2a2.2 2.2 0 0 0 .1.8c.3 1.7 1.3 3.2 2.8 4.1.6.3 2 .8 4.7.8h21.1z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 32 32" id="logo-android">
+        <path d="M23.35 12.653l2.496-4.323a.51.51 0 0 0 .07-.26.52.52 0 0 0-.967-.262l-.001.002-2.527 4.377c-1.887-.867-4.094-1.373-6.419-1.373a15.64 15.64 0 0 0-6.517 1.413l.098-.04-2.527-4.378a.52.52 0 0 0-.969.259c0 .096.026.185.071.262l-.001-.002 2.496 4.323c-4.286 2.367-7.236 6.697-7.643 11.744h29.991c-.41-5.099-3.36-9.429-7.57-11.758z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 100 100"
+            id="architecture">
+        <path d="M74.27 52.41v3.75a.6.6 0 0 0 .59.59H82v4.17h-7.14a.59.59 0 0 0-.59.59v3.75a.6.6 0 0 0 .59.59H82V70h-7.14a.6.6 0 0 0-.59.6v3.75a.6.6 0 0 0 .59.59H82v5.69H68.54V37.49L82 48.56v3.26h-7.14a.59.59 0 0 0-.59.59zm-45.43-5.58H18v5h4.57a.59.59 0 0 1 .6.59v3.75a.6.6 0 0 1-.6.59H18v4.17h4.57a.59.59 0 0 1 .6.59v3.75a.6.6 0 0 1-.6.59H18V70h4.57a.6.6 0 0 1 .6.6v3.75a.6.6 0 0 1-.6.59H18v5.69h10.84zm35.7 33.81h-31.7v-59.3a2 2 0 0 1 2-2h27.72a2 2 0 0 1 2 2v59.3zM45.82 63.05a1.18 1.18 0 0 0-1.19-1.18H40a1.18 1.18 0 0 0-1.19 1.18v4.66A1.19 1.19 0 0 0 40 68.9h4.65a1.19 1.19 0 0 0 1.19-1.19zm0-11.56a1.19 1.19 0 0 0-1.19-1.19H40a1.19 1.19 0 0 0-1.19 1.19v4.65A1.19 1.19 0 0 0 40 57.33h4.65a1.19 1.19 0 0 0 1.19-1.19zm0-11.57a1.19 1.19 0 0 0-1.19-1.19H40a1.19 1.19 0 0 0-1.19 1.19v4.66A1.19 1.19 0 0 0 40 45.77h4.65a1.19 1.19 0 0 0 1.19-1.19zm0-11.57a1.18 1.18 0 0 0-1.19-1.18H40a1.18 1.18 0 0 0-1.19 1.18V33A1.19 1.19 0 0 0 40 34.2h4.65a1.19 1.19 0 0 0 1.17-1.2zm12.78 34.7a1.19 1.19 0 0 0-1.19-1.18h-4.66a1.18 1.18 0 0 0-1.19 1.18v4.66a1.19 1.19 0 0 0 1.19 1.19h4.66a1.19 1.19 0 0 0 1.19-1.19zm0-11.56a1.19 1.19 0 0 0-1.19-1.19h-4.66a1.19 1.19 0 0 0-1.19 1.19v4.65a1.19 1.19 0 0 0 1.19 1.19h4.66a1.19 1.19 0 0 0 1.19-1.19zm0-11.57a1.19 1.19 0 0 0-1.19-1.19h-4.66a1.19 1.19 0 0 0-1.19 1.19v4.66a1.19 1.19 0 0 0 1.19 1.19h4.66a1.2 1.2 0 0 0 1.19-1.19zm0-11.57a1.19 1.19 0 0 0-1.19-1.18h-4.66a1.18 1.18 0 0 0-1.19 1.18V33a1.19 1.19 0 0 0 1.19 1.19h4.66A1.19 1.19 0 0 0 58.6 33z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 512 512"
+            id="introduction">
+        <path d="M495.809 14.921H16.191C7.25 14.921 0 22.169 0 31.112v49.653c0 8.943 7.25 16.191 16.191 16.191h36.877v223.879c0 8.943 7.25 16.191 16.191 16.191h89.524l-40.132 124.799c-4.563 14.189 3.24 29.389 17.429 33.951s29.388-3.24 33.952-17.429l45.446-141.322h81.047l45.446 141.322c4.564 14.191 19.768 21.991 33.951 17.429 14.189-4.562 21.992-19.763 17.429-33.951l-40.132-124.799h89.524c8.943 0 16.191-7.25 16.191-16.191V96.956h36.877c8.943 0 16.191-7.25 16.191-16.191V31.112c-.002-8.943-7.251-16.191-16.193-16.191zM259.157 256.035c0 9.057-7.342 16.4-16.4 16.4H132.288c-9.057 0-16.4-7.342-16.4-16.4V145.566c0-9.057 7.342-16.399 16.4-16.399h110.469c9.057 0 16.4 7.342 16.4 16.399v110.469zm136.954 17.087h-88.513c-8.943 0-16.191-7.25-16.191-16.191s7.25-16.191 16.191-16.191h88.513c8.943 0 16.191 7.25 16.191 16.191s-7.248 16.191-16.191 16.191zm0-56.131h-88.513c-8.943 0-16.191-7.25-16.191-16.191s7.25-16.191 16.191-16.191h88.513c8.943 0 16.191 7.25 16.191 16.191s-7.248 16.191-16.191 16.191zm0-55.05h-88.513c-8.943 0-16.191-7.25-16.191-16.191s7.25-16.191 16.191-16.191h88.513c8.943 0 16.191 7.25 16.191 16.191s-7.248 16.191-16.191 16.191z"></path>
+    </symbol>
+</svg>
+<nav>
+    <a href="#">Example</a>
+</nav>
+<main class="has-sidebar">
+    <section>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="overview">
+            <h1 class="section-title-with-marker">Overview</h1>
+            <br>
+            <p style="max-width:85dvw">Aplikasi ini bernama iamra course, iamra merupakan nama saya sendiri yaitu Ilham
+                Rahmat Akbar. Awalnya aplikasi ini dibuat untuk dokumentasi materi programming
+                yang
+                telah saya pelajari setelah saya lulus kuliah tahun 2022.
+                Kemudian seiring waktu, materi tersebut cukup banyak dan ketika ingin dibuka
+                lagi
+                melihat kodingan lama, cukup berantakan. Maka dari itu supaya rapi saya buat
+                folder
+                dan disusun ulang berdasarkan bahasa programming.
+                Sebenarnya sudah cukup rapi, tapi ketika di perjalanan semisal di krl atau di
+                transjakarta ingin melihat materi kodingan, harapannya dengan adanya aplikasi
+                ini
+                bisa melihat materi programming secara online. </p>
+            <br>
+            <h3>Tech stack : Java Android XML</h3>
+            <br>
+            <div class="table-box" style="max-width: 85dvw">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Package</th>
+                        <th>Fungsi</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td class="fit">androidx.appcompat</td>
+                        <td>Library untuk mendukung kompatibilitas UI di berbagai versi Android</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td class="fit">com.google.android.material</td>
+                        <td>Material Design components untuk UI modern dan konsisten</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td class="fit">androidx.constraintlayout</td>
+                        <td>Layout manager untuk membuat UI yang fleksibel dan responsif</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td class="fit">androidx.lifecycle (LiveData & ViewModel)</td>
+                        <td>Komponen lifecycle-aware untuk manajemen data dan UI state</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td class="fit">androidx.navigation (Fragment & UI)</td>
+                        <td>Navigation component untuk navigasi antar fragment/screen</td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td class="fit">Retrofit & Gson Converter</td>
+                        <td>HTTP client untuk mengakses REST API dan konversi JSON</td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td class="fit">OkHttp & Logging Interceptor</td>
+                        <td>HTTP client library dan interceptor untuk logging request/response</td>
+                    </tr>
+                    <tr>
+                        <td>8.</td>
+                        <td class="fit">uCrop</td>
+                        <td>Library untuk crop/edit gambar</td>
+                    </tr>
+                    <tr>
+                        <td>9.</td>
+                        <td class="fit">Room (Runtime & Compiler)</td>
+                        <td>Database lokal SQLite dengan abstraksi yang mudah digunakan</td>
+                    </tr>
+                    <tr>
+                        <td>10.</td>
+                        <td class="fit">Midtrans UIKit (Sandbox)</td>
+                        <td>Payment gateway Midtrans untuk proses pembayaran (mode sandbox)</td>
+                    </tr>
+                    <tr>
+                        <td>11.</td>
+                        <td class="fit">MPAndroidChart</td>
+                        <td>Library untuk membuat grafik dan chart</td>
+                    </tr>
+                    <tr>
+                        <td>12.</td>
+                        <td class="fit">androidx.security.crypto</td>
+                        <td>Enkripsi data sensitif seperti token dan credentials</td>
+                    </tr>
+                    <tr>
+                        <td>13.</td>
+                        <td class="fit">Glide & Compiler</td>
+                        <td>Image loading library untuk load dan cache gambar dari URL</td>
+                    </tr>
+                    <tr>
+                        <td>14.</td>
+                        <td class="fit">ViewPager2</td>
+                        <td>Widget untuk swipe antar halaman (digunakan untuk onboarding)</td>
+                    </tr>
+                    <tr>
+                        <td>15.</td>
+                        <td class="fit">Google Play Services (Auth & SafetyNet)</td>
+                        <td>Login dengan Google dan verifikasi keamanan device</td>
+                    </tr>
+                    <tr>
+                        <td>16.</td>
+                        <td class="fit">SwipeRefreshLayout</td>
+                        <td>Widget untuk pull-to-refresh data</td>
+                    </tr>
+                    <tr>
+                        <td>17.</td>
+                        <td class="fit">CameraX (Core, Camera2, Lifecycle, View)</td>
+                        <td>Library kamera modern untuk capture foto/video</td>
+                    </tr>
+                    <tr>
+                        <td>18.</td>
+                        <td class="fit">ML Kit Barcode Scanning</td>
+                        <td>Scan barcode dan QR code menggunakan ML Kit</td>
+                    </tr>
+                    <tr>
+                        <td>19.</td>
+                        <td class="fit">OSMDroid</td>
+                        <td>Library untuk menampilkan peta OpenStreetMap</td>
+                    </tr>
+                    <tr>
+                        <td>20.</td>
+                        <td class="fit">Dagger Hilt</td>
+                        <td>Dependency Injection framework untuk manajemen dependencies</td>
+                    </tr>
+                    <tr>
+                        <td>21.</td>
+                        <td class="fit">JUnit & Espresso</td>
+                        <td>Testing framework untuk unit test dan UI test</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="installation">
+            <h1 class="section-title-with-marker">Installation</h1>
+            <br>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-key active">1</div>
+                    <div class="timeline-content max-width-400">
+                        <div class="timeline-content-title">Klik Tombol Download</div>
+                        <div class="timeline-content-desc">Klik tombol download untuk mengunduh file
+                            app-release.apk dari GitHub Release
+                        </div>
+                        <div class="timeline-content-time">Langkah 1</div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                <div class="timeline-item">
+                    <div class="timeline-key active">2</div>
+                    <div class="timeline-content max-width-400">
+                        <div class="timeline-content-title">Buka File APK</div>
+                        <div class="timeline-content-desc">Buka file app-release.apk yang sudah
+                            terdownload di folder Downloads perangkat Android Anda
+                        </div>
+                        <div class="timeline-content-time">Langkah 2</div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                <div class="timeline-item">
+                    <div class="timeline-key active">3</div>
+                    <div class="timeline-content max-width-400">
+                        <div class="timeline-content-title">Izinkan Instalasi</div>
+                        <div class="timeline-content-desc">Izinkan instalasi dari sumber tidak
+                            dikenal jika diminta. Buka Pengaturan > Keamanan > centang "Sumber Tidak
+                            Dikenal"
+                        </div>
+                        <div class="timeline-content-time">Langkah 3</div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                <div class="timeline-item">
+                    <div class="timeline-key active">4</div>
+                    <div class="timeline-content max-width-400">
+                        <div class="timeline-content-title">Install Aplikasi</div>
+                        <div class="timeline-content-desc">Tekan tombol Install dan tunggu hingga
+                            proses instalasi selesai
+                        </div>
+                        <div class="timeline-content-time">Langkah 4</div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                <div class="timeline-item">
+                    <div class="timeline-key active">5</div>
+                    <div class="timeline-content max-width-400">
+                        <div class="timeline-content-title">Buka Aplikasi</div>
+                        <div class="timeline-content-desc">Tekan tombol Buka atau cari aplikasi di
+                            menu dan jalankan aplikasi
+                        </div>
+                        <div class="timeline-content-time">Selesai</div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p style="max-width:85dvw">Untuk menggunakan aplikasi secara langsung ini bisa melalui <a
+                    class="text-primary font-bold">Web</a> atau bisa
+                juga melalui aplikasi android. Silahkan klik tombol download dibawah ini</p>
+            <br>
+            <a class="button bg-primary" href="https://github.com/ilhamrhmtkbr/iamra-course-apk/releases/latest/download/app-release.apk">Download APK</a>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="mvvm">
+            <h1 class="section-title-with-marker">MVVM</h1>
+            <br>
+            <p style="max-width:85dvw">Aplikasi ini dikembangkan menggunakan Clean Architecture yang dikombinasikan dengan
+                pola desain MVVM (Model-View-ViewModel). Struktur direktori disusun secara modular
+                untuk memisahkan business logic, UI logic, dan data handling. Pendekatan ini dipilih
+                untuk memastikan kode yang scalable, mudah diuji (testable), dan memfasilitasi
+                kolaborasi pengembangan fitur secara independen.</p>
+            <br>
+
+            <div class="card-wrapper replace-shadow-with-border max-width-500 overflow-auto" style="max-width: 85dvw;">
+                <div class="mermaid">
+                    graph TB
+                    subgraph "Presentation Layer"
+                    A[Activity/Fragment] --> B[ViewModel]
+                    end
+
+                    subgraph "Domain Layer"
+                    B --> C[Repository]
+                    end
+
+                    subgraph "Data Layer"
+                    C --> D[Remote Data Source<br/>Retrofit API]
+                    C --> E[Local Data Source<br/>Room Database]
+                    end
+
+                    style A fill:#4A90E2,stroke:#357ABD,stroke-width:2px,color:#fff
+                    style B fill:#7B61FF,stroke:#6347e6,stroke-width:2px,color:#fff
+                    style C fill:#FF6B6B,stroke:#ee5a52,stroke-width:2px,color:#fff
+                    style D fill:#4ECDC4,stroke:#3db8b0,stroke-width:2px,color:#fff
+                    style E fill:#F7B731,stroke:#e6a621,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+            <br>
+
+            <!-- A. Presentation Layer -->
+            <div class="accordion-item">
+                <input type="checkbox" id="accordion-item1" class="accordion-item-check"/>
+                <label for="accordion-item1" class="accordion-item-label">
+                    <div class="flex-aic-jcb">
+                        <p>A. Presentation Layer (`presentation/`)</p>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-item-label-subtitle">
+                        Layer terluar yang berinteraksi langsung dengan pengguna menggunakan Package
+                        by Feature.
+                    </div>
+                </label>
+                <div class="accordion-content">
+                    <p>Layer ini merupakan lapisan terluar yang berinteraksi langsung dengan
+                        pengguna. Pengorganisasian paket di dalamnya menggunakan pendekatan Package
+                        by Feature, di mana setiap fitur memiliki direktori sendiri yang mencakup
+                        seluruh kebutuhan UI-nya.</p>
+                    <br>
+
+                    <div class="data-box">
+                        <div class="data-content">
+                            <div class="data-key">Fragment/Activity</div>
+                            <div class="data-value">: Bertanggung jawab hanya untuk merender
+                                tampilan dan menangkap input pengguna (contoh:
+                                `CoursesFragment.java`, `EarningsFragment.java`).
+                            </div>
+                            <div class="data-key">ViewModel</div>
+                            <div class="data-value">: Menangani logika presentasi dan menyimpan
+                                state UI menggunakan `LiveData`/`StateFlow`. ViewModel berkomunikasi
+                                dengan Domain Layer untuk mendapatkan data (contoh:
+                                `CoursesViewModel.java`, `LoginViewModel.java`).
+                            </div>
+                            <div class="data-key">Adapter</div>
+                            <div class="data-value">: Menghubungkan data ke komponen list seperti
+                                RecyclerView (contoh: `CoursesAdapter.java`, `GroupAdapter.java`).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- B. Domain Layer -->
+            <div class="accordion-item">
+                <input type="checkbox" id="accordion-item2" class="accordion-item-check"/>
+                <label for="accordion-item2" class="accordion-item-label">
+                    <div class="flex-aic-jcb">
+                        <p>B. Domain Layer (`domain/`)</p>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-item-label-subtitle">
+                        Inti aplikasi yang berisi aturan bisnis murni tanpa ketergantungan
+                        framework.
+                    </div>
+                </label>
+                <div class="accordion-content">
+                    <p>Ini adalah inti dari aplikasi yang berisi aturan bisnis murni dan tidak
+                        memiliki ketergantungan pada framework Android maupun library pihak ketiga.
+                        Layer ini mendefinisikan "apa" yang bisa dilakukan aplikasi.</p>
+                    <br>
+                    <div class="data-box">
+                        <div class="data-content">
+                            <div class="data-key">/model/</div>
+                            <div class="data-value">: Mendefinisikan entitas data atau POJO (Plain
+                                Old Java Object) yang digunakan di seluruh aplikasi (contoh:
+                                `Course.java`, `User.java`, `Certificate.java`).
+                            </div>
+                            <div class="data-key">/repository/</div>
+                            <div class="data-value">: Berisi Interface yang berfungsi sebagai
+                                kontrak data. Interface ini menjelaskan data apa yang dibutuhkan
+                                oleh domain tanpa peduli dari mana asalnya (contoh:
+                                `StudentCoursesRepository.java`, `AuthRepository.java`).
+                            </div>
+                            <div class="data-key">/usecase/</div>
+                            <div class="data-value">: (Opsional) Menangani logika bisnis spesifik
+                                yang kompleks (contoh: `LogoutUseCase.java`).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- C. Data Layer -->
+            <div class="accordion-item">
+                <input type="checkbox" id="accordion-item3" class="accordion-item-check"/>
+                <label for="accordion-item3" class="accordion-item-label">
+                    <div class="flex-aic-jcb">
+                        <p>C. Data Layer (`data/`)</p>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-item-label-subtitle">
+                        Mengelola sumber data dan implementasi Repository Pattern.
+                    </div>
+                </label>
+                <div class="accordion-content">
+                    <p>Layer ini bertugas mengelola sumber data dan merupakan implementasi konkret
+                        dari kontrak yang ada di Domain Layer. Layer ini menerapkan pola Repository
+                        Pattern.</p>
+                    <br>
+                    <div class="data-box">
+                        <p class="font-bold">remote/ - Komunikasi Jaringan</p>
+                        <div class="data-content">
+                            <div class="data-key">/api/</div>
+                            <div class="data-value">: Definisi endpoint Retrofit (contoh:
+                                `StudentApi.java`, `InstructorApi.java`).
+                            </div>
+                            <div class="data-key">/dto/</div>
+                            <div class="data-value">: Data Transfer Objects untuk memetakan respons
+                                JSON dari server (Request & Response bodies).
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="data-box">
+                        <p class="font-bold">local/ - Penyimpanan Lokal</p>
+                        <div class="data-content">
+                            <div class="data-key">/entity/</div>
+                            <div class="data-value">: Representasi tabel database (contoh:
+                                `StudentCoursesEntity.java`).
+                            </div>
+                            <div class="data-key">/dao/</div>
+                            <div class="data-value">: Data Access Objects yang berisi query SQL
+                                (contoh: `StudentCoursesDao.java`).
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="data-box">
+                        <p class="font-bold"></p>
+                        <div class="data-content">
+                            <div class="data-key">/mapper</div>
+                            <div class="data-value">: Bertugas mentransformasi data dari format DTO
+                                (Network) atau Entity (Database) menjadi format Model (Domain) agar
+                                lapisan domain tetap bersih (contoh: `CourseMapper.java`).
+                            </div>
+                            <div class="data-key">/repository</div>
+                            <div class="data-value">: Implementasi logika Single Source of Truth.
+                                Kelas ini (contoh: `StudentCoursesRepositoryImpl.java`) memutuskan
+                                apakah data diambil dari cache lokal atau API.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- D. Dependency Injection -->
+            <div class="accordion-item">
+                <input type="checkbox" id="accordion-item4" class="accordion-item-check"/>
+                <label for="accordion-item4" class="accordion-item-label">
+                    <div class="flex-aic-jcb">
+                        <p>D. Dependency Injection (`di/`)</p>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-item-label-subtitle">
+                        Mengelola pembuatan dan penyuntikan dependensi menggunakan Dagger Hilt.
+                    </div>
+                </label>
+                <div class="accordion-content">
+                    <p>Direktori ini mengelola pembuatan dan penyuntikan dependensi menggunakan
+                        Dagger Hilt. Modul-modul dipisahkan berdasarkan fungsinya untuk memudahkan
+                        konfigurasi:</p>
+                    <br>
+                    <div class="data-box">
+                        <div class="data-content">
+                            <div class="data-key">NetworkModule.java</div>
+                            <div class="data-value">: Menyediakan dependensi jaringan (Retrofit,
+                                OkHttp).
+                            </div>
+                        </div>
+
+                        <div class="data-content">
+                            <div class="data-key">DatabaseModule.java</div>
+                            <div class="data-value">: Menyediakan dependensi database (Room).</div>
+                        </div>
+
+                        <div class="data-content">
+                            <div class="data-key">RepositoryModule.java</div>
+                            <div class="data-value">: Menghubungkan Interface Repository di Domain
+                                dengan implementasinya di Data layer.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- E. Core -->
+            <div class="accordion-item">
+                <input type="checkbox" id="accordion-item5" class="accordion-item-check"/>
+                <label for="accordion-item5" class="accordion-item-label">
+                    <div class="flex-aic-jcb">
+                        <p>E. Core (`core/`)</p>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-item-label-subtitle">
+                        Modul pendukung berisi kode dasar dan fungsi bantuan global.
+                    </div>
+                </label>
+                <div class="accordion-content">
+                    <p>Modul pendukung yang berisi kode dasar dan fungsi bantuan yang digunakan
+                        secara global.</p>
+                </div>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="flow-data">
+            <h1 class="section-title-with-marker">Alur Data (Data Flow)</h1>
+            <br>
+            <p style="max-width:85dvw">Berikut adalah sequence diagram yang menggambarkan bagaimana data mengalir dari user
+                interaction hingga update UI:</p>
+            <br>
+            <div class="card-wrapper replace-shadow-with-border overflow-auto" style="max-width: 85dvw;">
+                <div class="mermaid">
+                    sequenceDiagram
+                    participant U as User
+                    participant V as View<br/>(Activity/Fragment)
+                    participant VM as ViewModel
+                    participant R as Repository
+                    participant API as Remote API<br/>(Retrofit)
+                    participant DB as Local DB<br/>(Room)
+
+                    U->>V: Klik Button Refresh
+                    V->>VM: fetchUserData()
+                    VM->>R: getUserData()
+
+                    alt Data dari API
+                    R->>API: getUser()
+                    API-->>R: User Data
+                    R->>DB: insertUser(data)
+                    DB-->>R: Success
+                    else API Error
+                    R->>DB: getUser() from cache
+                    DB-->>R: Cached User Data
+                    end
+
+                    R-->>VM: Return User
+                    VM->>VM: _userData.value = user
+                    VM-->>V: LiveData Update
+                    V->>V: Update UI
+                    V-->>U: Tampilkan Data
+                </div>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="folder-structure">
+            <h1 class="section-title-with-marker">Struktur Folder</h1>
+            <br>
+            <div style="max-width:85dvw; overflow: auto;">
+                <div style="background-color: #171c25;
+                            padding: 5px 12px;
+                            box-sizing: border-box;
+                            border-top-left-radius: 5px;
+                            border-top-right-radius: 5px;
+                            color: #e3ebfb;">plaintext
+                </div>
+                <pre><code class="language-plaintext">ilhamrhmtkbr@ilhamrhmtkbr:/mnt/ssd_external/project/mobile-app/iamra-course-java/app/src/main/java/com/ilhamrhmtkbr$ tree
+.
+├── core
+│    ├── auth
+│    │   ├── AuthStateManager.java
+│    │   ├── SessionRepository.java
+│    │   └── TokenManager.java
+│    ├── base
+│    │   ├── BaseProtectedActivity.java
+│    │   ├── BaseResponseApi.java
+│    │   ├── BaseValidation.java
+│    │   └── ValidationHelper.java
+│    ├── network
+│    │   ├── callback
+│    │   │   └── FormCallback.java
+│    │   ├── cookie
+│    │   │   └── SecureCookieJar.java
+│    │   ├── CookieManager.java
+│    │   ├── interceptor
+│    │   │   ├── FormDataInterceptor.java
+│    │   │   └── TokenRefreshInterceptor.java
+│    │   └── NetworkManager.java
+│    ├── state
+│    │   ├── FormState.java
+│    │   └── Resource.java
+│    └── utils
+│        ├── notif
+│        │   ├── DialogUtil.java
+│        │   └── ModalFilter.java
+│        ├── system
+│        │   ├── NavigationAndroidBarUtil.java
+│        │   ├── StatusBarUtil.java
+│        │   └── ToolbarUtil.java
+│        ├── tools
+│        │   ├── FragmentUtil.java
+│        │   ├── LangUtil.java
+│        │   ├── NotificationUtil.java
+│        │   ├── PermissionUtil.java
+│        │   └── RedirectUtil.java
+│        └── ui
+│            ├── LayoutUtil.java
+│            ├── TextUtil.java
+│            └── ThemeUtil.java
+├── data
+│    ├── local
+│    │   ├── dao
+│    │   │   ├── InstructorAnswersDao.java
+│    │   │   ├── InstructorAnswersPagination.java
+│    │   │   ├── StudentCartsDao.java
+│    │   │   ├── StudentCartsPagination.java
+│    │   │   └── ...
+│    │   ├── database
+│    │   │   ├── AppDatabaseSingleton.java
+│    │   │   ├── InstructorDatabase.java
+│    │   │   └── StudentDatabase.java
+│    │   └── entity
+│    │       ├── InstructorAnswersEntity.java
+│    │       ├── InstructorAnswersPaginationEntity.java
+│    │       ├── StudentCartsEntity.java
+│    │       ├── StudentCartsPaginationEntity.java
+│    │       └── ...
+│    ├── mapper
+│    │   ├── forum
+│    │   │   ├── ChatMapper.java
+│    │   │   └── GroupMapper.java
+│    │   ├── guest
+│    │   │   ├── CertificateMapper.java
+│    │   │   ├── CourseMapper.java
+│    │   │   └── SectionMapper.java
+│    │   ├── instructor
+│    │   │   ├── AnswerMapper.java
+│    │   │   └── ...
+│    │   ├── student
+│    │   │   ├── CartMapper.java
+│    │   │   └── ...
+│    │   ├── UserMapper.java
+│    │   └── ValidationErrorMapper.java
+│    ├── remote
+│    │   ├── api
+│    │   │   ├── ForumApi.java
+│    │   │   ├── InstructorApi.java
+│    │   │   ├── PublicApi.java
+│    │   │   ├── StudentApi.java
+│    │   │   └── UserApi.java
+│    │   ├── dto
+│    │   │   ├── request
+│    │   │   │   ├── ForumMessageRequest.java
+│    │   │   │   ├── InstructorAccountUpSertRequest.java
+│    │   │   │   ├── StudentCartStoreRequest.java
+│    │   │   │   ├── UserAuthLoginRequest.java
+│    │   │   │   └── ...
+│    │   │   └── response
+│    │   │       ├── ForumChatResponse.java
+│    │   │       ├── InstructorAccountResponse.java
+│    │   │       ├── PublicCertificateVerifyResponse.java
+│    │   │       ├── PublicCoursesResponse.java
+│    │   │       ├── StudentCartResponse.java
+│    │   │       └── ...
+│    │   └── websocket
+│    │       └── CustomWebSocketListener.java
+│    └── repository
+│        ├── AuthRepositoryImpl.java
+│        ├── ForumRepositoryImpl.java
+│        ├── InstructorAccountRepositoryImpl.java
+│        ├── MemberRepositoryImpl.java
+│        ├── PublicRepositoryImpl.java
+│        ├── StudentCartRepositoryImpl.java
+│        └── ...
+├── di
+│    ├── AuthModule.java
+│    ├── DatabaseModule.java
+│    ├── ManagerModule.java
+│    ├── NetworkModule.java
+│    └── RepositoryModule.java
+├── domain
+│    ├── model
+│    │   ├── common
+│    │   │   ├── Course.java
+│    │   │   └── ...
+│    │   ├── forum
+│    │   │   ├── Chat.java
+│    │   │   └── ...
+│    │   ├── instructor
+│    │   │   ├── Account.java
+│    │   │   └── ...
+│    │   ├── student
+│    │   │   ├── Cart.java
+│    │   │   └── ...
+│    │   └── User.java
+│    ├── repository
+│    │   ├── AuthRepository.java
+│    │   ├── ForumRepository.java
+│    │   ├── InstructorAccountRepository.java
+│    │   ├── MemberRepository.java
+│    │   ├── PublicRepository.java
+│    │   ├── StudentCartRepository.java
+│    │   └── ...
+│    └── usecase
+│        └── LogoutUseCase.java
+├── Ilhamrhmtkbr.java
+└── presentation
+    ├── auth
+    │    ├── AuthActivity.java
+    │    ├── login
+    │    │   ├── LoginFragment.java
+    │    │   └── LoginViewModel.java
+    │    └── register
+    │        ├── RegisterFragment.java
+    │        └── RegisterViewModel.java
+    ├── forum
+    │    ├── ForumActivity.java
+    │    ├── group
+    │    │   ├── GroupAdapter.java
+    │    │   ├── GroupFragment.java
+    │    │   └── GroupViewModel.java
+    │    ├── message
+    │    │   ├── MessageAdapter.java
+    │    │   ├── MessageFragment.java
+    │    │   ├── MessageViewModel.java
+    │    │   └── MessageWebSocket.java
+    │    ├── SetupBottomNav.java
+    │    └── SetupNavigationDrawer.java
+    ├── guest
+    │    ├── certificates
+    │    │   ├── CertificatesFragment.java
+    │    │   └── CertificatesViewModel.java
+    │    ├── coursedetail
+    │    │   ├── CourseDetailFragment.java
+    │    │   ├── CourseDetailSectionAdapter.java
+    │    │   ├── CourseDetailSectionBottomSheet.java
+    │    │   └── CourseDetailViewModel.java
+    │    ├── courses
+    │    │   ├── CourseFilterParams.java
+    │    │   ├── CoursesAdapter.java
+    │    │   ├── CoursesFragment.java
+    │    │   └── CoursesViewModel.java
+    │    ├── CustomCondition.java
+    │    ├── GuestActivity.java
+    │    ├── home
+    │    │   ├── HomeFragment.java
+    │    │   ├── HomeImageAdapter.java
+    │    │   ├── HomeInfoAdapter.java
+    │    │   ├── HomeSettingAdapter.java
+    │    │   ├── HomeViewPagerInstructor.java
+    │    │   └── HomeViewPagerStudent.java
+    │    ├── SetupBottomNav.java
+    │    ├── SetupExtraListener.java
+    │    ├── SetupFragmentManager.java
+    │    ├── SetupNavigationDrawer.java
+    │    ├── SetupOptionsMenu.java
+    │    ├── SetupOverlay.java
+    │    └── SetupSearchView.java
+    ├── instructor
+    │    ├── account
+    │    │   ├── AccountBanksAdapter.java
+    │    │   ├── AccountFragment.java
+    │    │   ├── AccountViewModels.java
+    │    │   └── SetupBanks.java
+    │    ├── InstructorActivity.java
+    │    ├── SetupBottomNav.java
+    │    ├── SetupExtraListener.java
+    │    ├── SetupNavigationDrawer.java
+    │    └── ...
+    ├── member
+    │    ├── additionalinfo
+    │    │   ├── AdditionalInfoBottomSheetMap.java
+    │    │   ├── AdditionalInfoFragment.java
+    │    │   └── AdditionalInfoViewModel.java
+    │    ├── MemberActivity.java
+    │    ├── SetupBottomNav.java
+    │    ├── SetupExtraListener.java
+    │    ├── SetupNavigationDrawer.java
+    │    ├── SetupNotification.java
+    │    ├── SetupToolbar.java
+    │    ├── SetupUserData.java
+    |	└── ...
+    ├── onboarding
+    │    ├── OnboardingActivity.java
+    │    ├── OnboardingAdapter.java
+    │    ├── OnboardingItem.java
+    │    ├── SetupAppFlow.java
+    │    └── SetupPrefs.java
+    ├── qrscanner
+    │    ├── CameraInterface.java
+    │    ├── CertificateInterface.java
+    │    ├── QrCodeInterface.java
+    │    └── QrScannerActivity.java
+    ├── student
+    │    ├── SetupBottomNav.java
+    │    ├── SetupExtraListener.java
+    │    ├── SetupNavigationDrawer.java
+    │    ├── StudentActivity.java
+    │    ├── transactiondetail
+    │    │   ├── TransactionDetailFragment.java
+    │    │   └── TransactionDetailViewModel.java
+    │    └── ...
+    └── utils
+        ├── adapter
+        │    ├── AccordionAdapter.java
+        │    └── PaginationAdapter.java
+        ├── behavior
+        │    ├── BottomNavBehavior.java
+        │    └── ToolbarBehavior.java
+        ├── component
+        │    ├── ButtonSubmit.java
+        │    ├── DataInfo.java
+        │    ├── InputText.java
+        │    └── ScrollIndicator.java
+        ├── helper
+        │    ├── ImageViewUtil.java
+        │    ├── LoadingUtil.java
+        │    ├── RecyclerViewsUtil.java
+        │    └── TableLayoutUtil.java
+        └── tools
+            ├── FormStateHandler.java
+            ├── SingleLiveEvent.java
+            └── ValidationFrontend.java
+</code></pre>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="guest">
+            <h1 class="section-title-with-marker">Guest</h1>
+            <div class="owl-carousel" style="max-width: 85dvw;">
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/guest-home.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/guest-courses.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/guest-certificate-verify.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/guest-login.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/guest-register.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="member">
+            <h1 class="section-title-with-marker">Member</h1>
+            <div class="owl-carousel" style="max-width: 85dvw;">
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/member-additional-info.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/member-additional-info-map.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/member-authentication.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/member-email.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/member-register-role-instructor.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="instructor">
+            <h1 class="section-title-with-marker">Instructor</h1>
+            <div class="owl-carousel" style="max-width: 85dvw;">
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-account.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-answers.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-answer-edit.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-coupons.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-coupon-edit.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-courses.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-course-edit.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-earnings.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-lessons.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-lesson-edit.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-profile.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-reviews.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-sections.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-section-edit.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-socials.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/instructor-social-edit.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="student">
+            <h1 class="section-title-with-marker">Student</h1>
+            <div class="owl-carousel" style="max-width: 85dvw;">
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-carts.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-certificates.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-certificate-detail.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-courses.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-sections.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-sections-2.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-lessons.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-lesson-detail.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-profile.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-progresses.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-progress-detail.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-questions.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-question-detail.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-reviews.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-review-detail-edit.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-transactions.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-transaction-store.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/student-transaction-detail.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-top-ideal-distance-to-header max-width-900" id="forum">
+            <h1 class="section-title-with-marker">Forum</h1>
+            <div class="owl-carousel" style="max-width: 85dvw;">
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/forum-group.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+                <div class='mobile-phone'>
+                    <div class='brove'><span class='speaker'></span></div>
+                    <div class='screen'>
+                        <img src="./webp/forum-chat.webp" loading="lazy" decoding="async"
+                             alt="photo" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <aside class="sidebar-menu">
+        <div class="sidebar-menu-header">
+            <svg class="fill-primary svg-m">
+                <use href="#logo-android"></use>
+            </svg>
+            <p class="sidebar-menu-header-title">Iamra Course</p>
+        </div>
+        <div class="sidebar-menu-element">
+            <label class="sidebar-menu-item" for="is-sidebar-active">
+                <svg class="sidebar-menu-button-svg">
+                    <use href="#hide"></use>
+                </svg>
+                <p>Menu</p>
+            </label>
+            <details class="sidebar-menu-accordion">
+                <summary class="sidebar-menu-item" data-title="Introduction">
+                    <svg class="sidebar-menu-button-svg">
+                        <use href="#introduction"></use>
+                    </svg>
+                    <span>Introduction</span>
+                </summary>
+                <a class="sidebar-menu-item" href="#overview">Overview</a>
+                <a class="sidebar-menu-item" href="#installation">Installation</a>
+            </details>
+            <details class="sidebar-menu-accordion">
+                <summary class="sidebar-menu-item" data-title="Architecture">
+                    <svg class="sidebar-menu-button-svg">
+                        <use href="#architecture"></use>
+                    </svg>
+                    <span>Architecture</span>
+                </summary>
+                <a class="sidebar-menu-item" href="#mvvm">MVVM</a>
+                <a class="sidebar-menu-item" href="#flow-data">Flow data</a>
+                <a class="sidebar-menu-item" href="#folder-structure">Folder Structure</a>
+            </details>
+            <details class="sidebar-menu-accordion">
+                <summary class="sidebar-menu-item" data-title="Feature">
+                    <svg class="sidebar-menu-button-svg">
+                        <use href="#feature"></use>
+                    </svg>
+                    <span>Feature</span>
+                </summary>
+                <a class="sidebar-menu-item" href="#guest">Guest</a>
+                <a class="sidebar-menu-item" href="#member">Member</a>
+                <a class="sidebar-menu-item" href="#instructor">Instructor</a>
+                <a class="sidebar-menu-item" href="#student">Student</a>
+                <a class="sidebar-menu-item" href="#forum">forum</a>
+            </details>
+        </div>
+    </aside>
+</main>
+<footer>
+    ...
+</footer>
+<script>
+    function changeTheme() {
+        let body = document.getElementsByTagName("body")[0];
+        body.classList.toggle('dark-mode');
+
+        let buttonThemeMode = document.getElementsByClassName('example-button-change-theme')[0];
+        if (buttonThemeMode.textContent.includes('Dark')) {
+            buttonThemeMode.textContent = 'Light Mode';
+        } else {
+            buttonThemeMode.textContent = 'Dark Mode';
+        }
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    // Initialize Highlight.js
+    hljs.highlightAll();
+
+    // Initialize Mermaid
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            fontSize: '16px'
+        }
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayHoverPause: false,
+        responsive: {
+          0: {
+            items: 1,
+            stagePadding: 30
+          },
+          800: {
+            items: 1,
+            stagePadding: 50
+          },
+          1000: {
+            items: 3
+          },
+          1400: {
+            items: 3
+          }
+        }
+      });
+    });
+</script>
+</body>
+</html>

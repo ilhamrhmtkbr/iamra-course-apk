@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_member_navigation"
+    app:startDestination="@+id/nav_additional_info">
+
+    <fragment
+        android:id="@+id/nav_additional_info"
+        android:name="com.ilhamrhmtkbr.presentation.member.additionalinfo.AdditionalInfoFragment"
+        android:label="@string/additional_info"
+        tools:layout="@layout/fragment_user_member_additional_info" />
+
+    <fragment
+        android:id="@+id/nav_authentication"
+        android:name="com.ilhamrhmtkbr.presentation.member.authentication.AuthenticationFragment"
+        android:label="@string/authentication"
+        tools:layout="@layout/fragment_user_member_authentication"/>
+
+    <fragment
+        android:id="@+id/nav_email"
+        android:name="com.ilhamrhmtkbr.presentation.member.email.EmailFragment"
+        android:label="@string/email"
+        tools:layout="@layout/fragment_user_member_email"/>
+
+    <fragment
+        android:id="@+id/nav_role_register"
+        android:name="com.ilhamrhmtkbr.presentation.member.roleregister.RoleRegisterFragment"
+        android:label="@string/role_register"
+        tools:layout="@layout/fragment_user_member_role_register"/>
+</navigation>

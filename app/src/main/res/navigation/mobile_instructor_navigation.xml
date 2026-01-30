@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_profile">
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.account.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_instructor_account" />
+
+    <fragment
+        android:id="@+id/nav_answers"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.answers.AnswersFragment"
+        android:label="@string/answers"
+        tools:layout="@layout/fragment_instructor_answers" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_public_home" />
+
+    <fragment
+        android:id="@+id/nav_courses"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.courses.CoursesFragment"
+        android:label="@string/courses"
+        tools:layout="@layout/fragment_instructor_courses" />
+
+    <fragment
+        android:id="@+id/nav_answer"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.answer.AnswerFragment"
+        android:label="@string/answer"
+        tools:layout="@layout/fragment_instructor_answer" />
+
+    <fragment
+        android:id="@+id/nav_coupon"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.coupon.CouponFragment"
+        android:label="@string/coupon"
+        tools:layout="@layout/fragment_instructor_coupon" />
+
+    <fragment
+        android:id="@+id/nav_coupons"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.coupons.CouponsFragment"
+        android:label="@string/coupons"
+        tools:layout="@layout/fragment_instructor_coupons" />
+
+    <fragment
+        android:id="@+id/nav_course"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.course.CourseFragment"
+        android:label="@string/course"
+        tools:layout="@layout/fragment_instructor_course" />
+
+    <fragment
+        android:id="@+id/nav_earnings"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.earnings.EarningsFragment"
+        android:label="@string/earnings"
+        tools:layout="@layout/fragment_instructor_earnings" />
+
+    <fragment
+        android:id="@+id/nav_lesson"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.lesson.LessonFragment"
+        android:label="@string/lesson"
+        tools:layout="@layout/fragment_instructor_lesson" />
+
+    <fragment
+        android:id="@+id/nav_lessons"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.lessons.LessonsFragment"
+        android:label="@string/lessons"
+        tools:layout="@layout/fragment_instructor_lessons" />
+
+    <fragment
+        android:id="@+id/nav_reviews"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.reviews.ReviewsFragment"
+        android:label="@string/reviews"
+        tools:layout="@layout/fragment_instructor_reviews" />
+
+    <fragment
+        android:id="@+id/nav_section"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.section.SectionFragment"
+        android:label="@string/section"
+        tools:layout="@layout/fragment_instructor_section" />
+
+    <fragment
+        android:id="@+id/nav_sections"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.sections.SectionsFragment"
+        android:label="@string/sections"
+        tools:layout="@layout/fragment_instructor_sections" />
+
+    <fragment
+        android:id="@+id/nav_social"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.social.SocialFragment"
+        android:label="@string/social"
+        tools:layout="@layout/fragment_instructor_social" />
+
+    <fragment
+        android:id="@+id/nav_socials"
+        android:name="com.ilhamrhmtkbr.presentation.instructor.socials.SocialsFragment"
+        android:label="@string/socials"
+        tools:layout="@layout/fragment_instructor_socials" />
+
+</navigation>

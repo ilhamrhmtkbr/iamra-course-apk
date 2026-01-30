@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn_page"
+    android:layout_width="31dp"
+    android:layout_height="31dp"
+    android:layout_marginEnd="@dimen/size_m"
+    android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+    android:focusable="true"
+    android:fontFamily="@font/poppins_medium"
+    android:foreground="@drawable/ripple_trans_bg_radiuss"
+    android:gravity="center"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/text_s"
+    android:textStyle="bold"
+    tools:context=".presentation.utils.adapter.PaginationAdapter" />

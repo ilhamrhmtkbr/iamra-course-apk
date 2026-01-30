@@ -1,0 +1,31 @@
+<resources>
+    <dimen name="text_xxxx">33sp</dimen>
+    <dimen name="text_xxx">30sp</dimen>
+    <dimen name="text_xx">27sp</dimen>
+    <dimen name="text_x">24sp</dimen>
+    <dimen name="text_l">20sp</dimen>
+    <dimen name="text_m">16sp</dimen>
+    <dimen name="text_s">12sp</dimen>
+    <dimen name="text_xs">9sp</dimen>
+    <dimen name="text_xxs">6sp</dimen>
+
+    <dimen name="size_xxxx">33dp</dimen>
+    <dimen name="size_xxx">30dp</dimen>
+    <dimen name="size_xx">27dp</dimen>
+    <dimen name="size_x">24dp</dimen>
+    <dimen name="size_l">20dp</dimen>
+    <dimen name="size_m">16dp</dimen>
+    <dimen name="size_s">12dp</dimen>
+    <dimen name="size_xs">9dp</dimen>
+    <dimen name="size_xxs">6dp</dimen>
+
+    <!-- Radius -->
+    <dimen name="radius_x">13dp</dimen>
+    <dimen name="radius_l">10dp</dimen>
+    <dimen name="radius_m">7dp</dimen>
+    <dimen name="radius_s">4dp</dimen>
+
+    <dimen name="space_top">63dp</dimen>
+
+    <dimen name="fab_margin">38dp</dimen>
+</resources>

@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ilhamrhmtkbr.presentation.utils.helper.RecyclerViewsUtil"
+    >
+    <size android:height="1dp"/>
+    <solid android:color="@color/border_color"/>
+</shape>

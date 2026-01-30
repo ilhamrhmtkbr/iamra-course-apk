@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_home"
+        android:orderInCategory="100"
+        android:title="@string/home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/nav_courses"
+        android:orderInCategory="100"
+        android:title="@string/courses"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/nav_certificates"
+        android:orderInCategory="100"
+        android:title="@string/certificates"
+        app:showAsAction="never" />
+</menu>

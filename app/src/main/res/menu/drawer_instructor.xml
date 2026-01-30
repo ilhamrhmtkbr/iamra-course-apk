@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_drawer_profile"
+            android:title="@string/profile" />
+
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_drawer_account"
+            android:title="@string/account"/>
+
+        <item
+            android:id="@+id/nav_courses"
+            android:icon="@drawable/ic_drawer_courses"
+            android:title="@string/courses"/>
+
+        <item
+            android:id="@+id/nav_coupons"
+            android:icon="@drawable/ic_drawer_coupons"
+            android:title="@string/coupons"/>
+
+        <item
+            android:id="@+id/nav_answers"
+            android:icon="@drawable/ic_drawer_answers"
+            android:title="@string/answers" />
+
+        <item
+            android:id="@+id/nav_earnings"
+            android:icon="@drawable/ic_drawer_earnings"
+            android:title="@string/earnings" />
+
+        <item
+            android:id="@+id/nav_reviews"
+            android:icon="@drawable/ic_drawer_reviews"
+            android:title="@string/reviews"/>
+
+        <item
+            android:id="@+id/nav_socials"
+            android:icon="@drawable/ic_drawer_social"
+            android:title="@string/socials"/>
+
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_drawer_setting"
+            android:title="@string/setting"/>
+
+        <item
+            android:id="@+id/nav_forum"
+            android:icon="@drawable/ic_drawer_discussion_forums"
+            android:title="@string/discussion_forum"/>
+    </group>
+</menu>

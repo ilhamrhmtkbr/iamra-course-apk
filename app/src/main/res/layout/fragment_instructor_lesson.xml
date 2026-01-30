@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.instructor.lesson.LessonFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_m"
+            android:layout_marginBottom="111dp"
+            android:background="@drawable/bg_themethird_radiusm"
+            android:padding="@dimen/size_m"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/button_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_red_radiusfull"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_medium"
+                android:foreground="@drawable/ripple_trans_bg_radiusfull"
+                android:paddingHorizontal="@dimen/size_m"
+                android:paddingVertical="3dp"
+                android:text="@string/delete"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_s"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/form_type" />
+
+            <TextView
+                android:id="@+id/form_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/size_x"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/text_x"
+                app:layout_constraintBottom_toTopOf="@id/input_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.InputText
+                android:id="@+id/input_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:custom_label="@string/title"
+                app:layout_constraintBottom_toTopOf="@id/input_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/form_type" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.InputText
+                android:id="@+id/input_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                app:custom_label="@string/description"
+                app:layout_constraintBottom_toTopOf="@id/label_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_title" />
+
+            <TextView
+                android:id="@+id/label_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                android:layout_marginBottom="1dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/code"
+                android:textColor="@color/link_color"
+                android:textSize="@dimen/text_s"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/input_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_description" />
+
+            <EditText
+                android:id="@+id/input_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autofillHints="..."
+                android:background="@drawable/bg_themefifth_radiusm_bordercolordefault"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLines="10"
+                android:minLines="3"
+                android:overScrollMode="always"
+                android:padding="@dimen/size_s"
+                android:scrollbars="vertical"
+                android:textColor="@color/text_color"
+                android:textCursorDrawable="@drawable/bg_cursor_text"
+                app:layout_constraintBottom_toTopOf="@id/error_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_code"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/error_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/poppins_light"
+                android:textAlignment="textStart"
+                android:textColor="@color/red_color"
+                android:textSize="@dimen/text_s"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/input_order"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_code" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.InputText
+                android:id="@+id/input_order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_m"
+                app:custom_label="@string/order_in_section"
+                app:layout_constraintBottom_toTopOf="@id/button_submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/error_code" />
+
+            <com.ilhamrhmtkbr.presentation.utils.component.ButtonSubmit
+                android:id="@+id/button_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_l"
+                app:layout_constraintBottom_toTopOf="@id/button_delete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_order" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_themefirst_radiusm_bordercolordefault"
+                android:indeterminateTint="@color/blue_color"
+                android:padding="@dimen/size_m"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

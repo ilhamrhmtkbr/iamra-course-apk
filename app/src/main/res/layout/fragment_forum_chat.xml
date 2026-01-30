@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_wa"
+    tools:context=".presentation.forum.message.MessageFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wa_chat_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/size_m"
+        app:layout_constraintBottom_toTopOf="@id/wa_chat_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/wa_chat_input"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="@dimen/size_s"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="@dimen/size_s"
+        android:autofillHints=""
+        android:background="@drawable/bg_wa_chat_input"
+        android:hint="@string/type_here"
+        android:inputType="text"
+        android:paddingHorizontal="@dimen/size_x"
+        android:textColorHint="@color/wa_text_color"
+        android:textCursorDrawable="@drawable/bg_cursor_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wa_chat_content"
+        tools:ignore="LabelFor" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wa_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/wa_chat_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/wa_chat_input">
+
+        <ImageView
+            android:id="@+id/wa_send_logo"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="@dimen/size_s"
+            android:background="@drawable/bg_wa_chat_button_send"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/size_m"
+            android:src="@drawable/ic_member_send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/wa_bg_deep_color" />
+
+        <ProgressBar
+            android:id="@+id/wa_send_loading"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="@dimen/size_s"
+            android:background="@drawable/bg_wa_chat_button_send"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_trans_bg_radiusfull"
+            android:indeterminateTint="@color/wa_white_color"
+            android:padding="@dimen/size_m"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

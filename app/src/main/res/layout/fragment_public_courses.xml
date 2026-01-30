@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.guest.courses.CoursesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/size_m"
+        android:paddingTop="50dp"
+        android:paddingBottom="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/button_filter_by_level"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+            android:focusable="true"
+            android:fontFamily="@font/poppins_medium"
+            android:foreground="@drawable/ripple_trans_bg_radiuss"
+            android:paddingVertical="@dimen/size_xxs"
+            android:text="@string/level"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_s"
+            app:drawableStartCompat="@drawable/ic_custom_filter"
+            app:drawableTint="@color/text_color"
+            app:layout_constraintEnd_toStartOf="@id/button_filter_by_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/button_filter_by_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_m"
+            android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+            android:focusable="true"
+            android:fontFamily="@font/poppins_medium"
+            android:foreground="@drawable/ripple_trans_bg_radiuss"
+            android:paddingVertical="@dimen/size_xxs"
+            android:text="@string/status"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_s"
+            app:drawableStartCompat="@drawable/ic_custom_filter"
+            app:drawableTint="@color/text_color"
+            app:layout_constraintEnd_toStartOf="@id/button_filter_by_sort"
+            app:layout_constraintStart_toEndOf="@id/button_filter_by_level"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/button_filter_by_sort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+            android:focusable="true"
+            android:fontFamily="@font/poppins_medium"
+            android:foreground="@drawable/ripple_trans_bg_radiuss"
+            android:paddingVertical="@dimen/size_xxs"
+            android:text="@string/sort_by"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_s"
+            app:drawableStartCompat="@drawable/ic_custom_filter"
+            app:drawableTint="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_filter_by_status"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_courses"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/size_m"
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toTopOf="@id/rv_pagination"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_filter_by_sort" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pagination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/scroll_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_courses" />
+
+        <com.ilhamrhmtkbr.presentation.utils.component.ScrollIndicator
+            android:id="@+id/scroll_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_pagination" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_themefirst_radiusm_bordercolordefault"
+            android:indeterminateTint="@color/blue_color"
+            android:padding="@dimen/size_m"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

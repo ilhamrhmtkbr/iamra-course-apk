@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_themethird_radiuss_bordercolordefault"
+    android:padding="@dimen/size_m"
+    tools:context=".presentation.instructor.answers.AnswersAdapter">
+
+    <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+        android:id="@+id/student_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:custom_title="@string/student"
+        app:layout_constraintBottom_toTopOf="@id/course_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+        android:id="@+id/course_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/size_s"
+        app:custom_title="@string/course_title"
+        app:layout_constraintBottom_toTopOf="@id/question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/student_name" />
+
+    <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+        android:id="@+id/question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:custom_title="@string/question"
+        app:layout_constraintBottom_toTopOf="@id/answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_title" />
+
+    <com.ilhamrhmtkbr.presentation.utils.component.DataInfo
+        android:id="@+id/answer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/size_s"
+        app:custom_title="@string/answer"
+        app:layout_constraintBottom_toTopOf="@id/created_at"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question" />
+
+    <TextView
+        android:id="@+id/created_at"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/link_color"
+        android:textSize="@dimen/text_xs"
+        app:layout_constraintBottom_toTopOf="@id/button_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answer" />
+
+    <TextView
+        android:id="@+id/button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue_radiusfull"
+        android:focusable="true"
+        android:fontFamily="@font/poppins_bold"
+        android:foreground="@drawable/ripple_trans_bg_radiusfull"
+        android:paddingHorizontal="@dimen/size_m"
+        android:paddingVertical="@dimen/size_xxs"
+        android:text="@string/edit"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/created_at" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
