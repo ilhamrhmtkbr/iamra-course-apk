@@ -185,11 +185,11 @@ Aplikasi ini dirancang untuk mengelola kursus online dengan fitur lengkap untuk:
 
 | Beranda | Kursus | Detail Kursus |
 |------|---------|---------------|
-| ![Home](html/webp/guest-home.webp) | ![Courses](html/webp/guest-courses.webp) | ![Detail](html/webp/guest-course-detail.webp) |
+| ![Home](docs/webp/guest-home.webp) | ![Courses](docs/webp/guest-courses.webp) | ![Detail](docs/webp/guest-course-detail.webp) |
 
 | Login | Registrasi | Verifikasi Sertifikat |
 |-------|----------|-------------------|
-| ![Login](html/webp/guest-login.webp) | ![Register](html/webp/guest-register.webp) | ![Verify](html/webp/guest-certificate-verify.webp) |
+| ![Login](docs/webp/guest-login.webp) | ![Register](docs/webp/guest-register.webp) | ![Verify](docs/webp/guest-certificate-verify.webp) |
 
 </details>
 
@@ -198,11 +198,11 @@ Aplikasi ini dirancang untuk mengelola kursus online dengan fitur lengkap untuk:
 
 | Verifikasi Email | Autentikasi 2FA | Pilih Role |
 |-------------------|-------------------|----------------|
-| ![Email](html/webp/member-email.webp) | ![2FA](html/webp/member-authentication.webp) | ![Role](html/webp/member-register-role-instructor.webp) |
+| ![Email](docs/webp/member-email.webp) | ![2FA](docs/webp/member-authentication.webp) | ![Role](docs/webp/member-register-role-instructor.webp) |
 
 | Info Tambahan | Lokasi Maps |
 |----------------|--------------|
-| ![Info](html/webp/member-additional-info.webp) | ![Map](html/webp/member-additional-info-map.webp) |
+| ![Info](docs/webp/member-additional-info.webp) | ![Map](docs/webp/member-additional-info-map.webp) |
 
 </details>
 
@@ -211,23 +211,23 @@ Aplikasi ini dirancang untuk mengelola kursus online dengan fitur lengkap untuk:
 
 | Daftar Kursus | Editor Kursus | Daftar Sesi |
 |---------|--------------|----------|
-| ![Courses](html/webp/instructor-courses.webp) | ![Editor](html/webp/instructor-course-edit.webp) | ![Sections](html/webp/instructor-sections.webp) |
+| ![Courses](docs/webp/instructor-courses.webp) | ![Editor](docs/webp/instructor-course-edit.webp) | ![Sections](docs/webp/instructor-sections.webp) |
 
 | Editor Sesi | Daftar Materi | Editor Materi |
 |---------------|---------|---------------|
-| ![Section](html/webp/instructor-section-edit.webp) | ![Lessons](html/webp/instructor-lessons.webp) | ![Lesson](html/webp/instructor-lesson-edit.webp) |
+| ![Section](docs/webp/instructor-section-edit.webp) | ![Lessons](docs/webp/instructor-lessons.webp) | ![Lesson](docs/webp/instructor-lesson-edit.webp) |
 
 | Penghasilan | Daftar Kupon | Editor Kupon |
 |----------|---------|---------------|
-| ![Earnings](html/webp/instructor-earnings.webp) | ![Coupons](html/webp/instructor-coupons.webp) | ![Coupon](html/webp/instructor-coupon-edit.webp) |
+| ![Earnings](docs/webp/instructor-earnings.webp) | ![Coupons](docs/webp/instructor-coupons.webp) | ![Coupon](docs/webp/instructor-coupon-edit.webp) |
 
 | Tanya Jawab | Editor Jawaban | Ulasan |
 |-----|--------------|---------|
-| ![QA](html/webp/instructor-answers.webp) | ![Answer](html/webp/instructor-answer-edit.webp) | ![Reviews](html/webp/instructor-reviews.webp) |
+| ![QA](docs/webp/instructor-answers.webp) | ![Answer](docs/webp/instructor-answer-edit.webp) | ![Reviews](docs/webp/instructor-reviews.webp) |
 
 | Profil | Akun | Media Sosial |
 |---------|---------|--------------|
-| ![Profile](html/webp/instructor-profile.webp) | ![Account](html/webp/instructor-account.webp) | ![Social](html/webp/instructor-socials.webp) |
+| ![Profile](docs/webp/instructor-profile.webp) | ![Account](docs/webp/instructor-account.webp) | ![Social](docs/webp/instructor-socials.webp) |
 
 </details>
 
@@ -236,27 +236,27 @@ Aplikasi ini dirancang untuk mengelola kursus online dengan fitur lengkap untuk:
 
 | Kursus Saya | Daftar Sesi | Daftar Materi |
 |-----------|----------|---------|
-| ![Courses](html/webp/student-courses.webp) | ![Sections](html/webp/student-sections.webp) | ![Lessons](html/webp/student-lessons.webp) |
+| ![Courses](docs/webp/student-courses.webp) | ![Sections](docs/webp/student-sections.webp) | ![Lessons](docs/webp/student-lessons.webp) |
 
 | Detail Materi | Progress | Detail Progress |
 |--------------|----------|-----------------|
-| ![Lesson](html/webp/student-lesson-detail.webp) | ![Progress](html/webp/student-progresses.webp) | ![Detail](html/webp/student-progress-detail.webp) |
+| ![Lesson](docs/webp/student-lesson-detail.webp) | ![Progress](docs/webp/student-progresses.webp) | ![Detail](docs/webp/student-progress-detail.webp) |
 
 | Keranjang | Transaksi | Detail Transaksi |
 |--------------|--------------|-------------------|
-| ![Cart](html/webp/student-carts.webp) | ![Trans](html/webp/student-transactions.webp) | ![Detail](html/webp/student-transaction-detail.webp) |
+| ![Cart](docs/webp/student-carts.webp) | ![Trans](docs/webp/student-transactions.webp) | ![Detail](docs/webp/student-transaction-detail.webp) |
 
 | Checkout | Sertifikat | Detail Sertifikat |
 |----------|--------------|-------------------|
-| ![Checkout](html/webp/student-transaction-store.webp) | ![Certs](html/webp/student-certificates.webp) | ![Cert](html/webp/student-certificate-detail.webp) |
+| ![Checkout](docs/webp/student-transaction-store.webp) | ![Certs](docs/webp/student-certificates.webp) | ![Cert](docs/webp/student-certificate-detail.webp) |
 
 | Pertanyaan | Detail Pertanyaan | Ulasan |
 |-----------|----------------|---------|
-| ![Questions](html/webp/student-questions.webp) | ![Question](html/webp/student-question-detail.webp) | ![Reviews](html/webp/student-reviews.webp) |
+| ![Questions](docs/webp/student-questions.webp) | ![Question](docs/webp/student-question-detail.webp) | ![Reviews](docs/webp/student-reviews.webp) |
 
 | Editor Ulasan | Profil |
 |--------------|---------|
-| ![Review](html/webp/student-review-detail-edit.webp) | ![Profile](html/webp/student-profile.webp) |
+| ![Review](docs/webp/student-review-detail-edit.webp) | ![Profile](docs/webp/student-profile.webp) |
 
 </details>
 
@@ -265,7 +265,7 @@ Aplikasi ini dirancang untuk mengelola kursus online dengan fitur lengkap untuk:
 
 | Daftar Grup | Chat |
 |--------|------|
-| ![Groups](html/webp/forum-group.webp) | ![Chat](html/webp/forum-chat.webp) |
+| ![Groups](docs/webp/forum-group.webp) | ![Chat](docs/webp/forum-chat.webp) |
 
 </details>
 
@@ -525,7 +525,7 @@ iamra-course-apk/
 ├── keystore.properties.example        # Contoh keystore config
 ├── .gitignore
 ├── README.md
-└── html/                              # Website dokumentasi
+└── docs/                              # Website dokumentasi
     ├── index.html
     ├── font/
     └── webp/                          # Screenshot
