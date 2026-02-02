@@ -21,12 +21,16 @@ public class UserAuthRegisterRequest {
     @SerializedName("password_confirmation")
     public String passwordConfirmation;
 
-    public UserAuthRegisterRequest(String firstName, String middleName, String lastName, String username, String password, String passwordConfirmation) {
+    @SerializedName("captcha")
+    public String captcha;
+
+    public UserAuthRegisterRequest(String firstName, String middleName, String lastName, String username, String password, String passwordConfirmation, String captcha) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
         this.passwordConfirmation = passwordConfirmation;
+        this.captcha = captcha;
     }
 }

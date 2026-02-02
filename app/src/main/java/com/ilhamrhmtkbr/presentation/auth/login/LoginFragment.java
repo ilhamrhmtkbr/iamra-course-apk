@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -29,6 +31,7 @@ import com.ilhamrhmtkbr.R;
 import com.ilhamrhmtkbr.core.state.FormState;
 import com.ilhamrhmtkbr.core.utils.notif.DialogUtil;
 import com.ilhamrhmtkbr.data.remote.dto.response.UserResponse;
+import com.ilhamrhmtkbr.presentation.auth.RecaptchaValidation;
 import com.ilhamrhmtkbr.presentation.utils.tools.FormStateHandler;
 import com.ilhamrhmtkbr.presentation.utils.helper.LoadingUtil;
 import com.ilhamrhmtkbr.presentation.guest.GuestActivity;
@@ -44,12 +47,12 @@ import java.util.Map;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements RecaptchaValidation {
     private static final String TAG = "LoginFragment";
     private FragmentUserAuthLoginBinding binding;
     private LoginViewModel viewModel;
     private GoogleSignInClient mGoogleSignInClient;
-    private ActivityResultLauncher<Intent> googleSignInLauncher;
+    private ActivityResultLauncher<Intent> googleSingInLauncher;
 
     @Override
     public void onCreate(Bundle bundle) {
@@ -57,23 +60,25 @@ public class LoginFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
-        // Initialize ActivityResultLauncher
-        googleSignInLauncher = registerForActivityResult(
+        googleSingInLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent data = result.getData();
-                        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-                        handleSignInResult(task);
-                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
-                        Toast.makeText(requireContext(), R.string.login_cancelled, Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(requireContext(), R.string.login_failed, Toast.LENGTH_SHORT).show();
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult activityResult) {
+                        if (activityResult.getResultCode() == Activity.RESULT_OK) {
+                            Intent intent = activityResult.getData();
+                            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(intent);
+                            handleSignInResult(task);
+                        } else if (activityResult.getResultCode() == Activity.RESULT_CANCELED) {
+                            Toast.makeText(requireContext(), R.string.login_cancelled, Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(requireContext(), R.string.login_failed, Toast.LENGTH_SHORT).show();
+                        }
                     }
-                });
-
+                }
+        );
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(BuildConfig.GOOGLE_ID)
+                .requestIdToken(BuildConfig.GOOGLE_CLIENT_ID)
                 .requestEmail()
                 .build();
 
@@ -119,9 +124,28 @@ public class LoginFragment extends Fragment {
             public void onClick(View view) {
                 UserAuthLoginRequest request = new UserAuthLoginRequest(
                         binding.inputUsername.getText().toString(),
-                        binding.inputPassword.getText().toString()
+                        binding.inputPassword.getText().toString(),
+                        null
                 );
-                viewModel.login(request);
+
+                if (viewModel.isValidValue(request)) {
+                    verifyRecaptcha(requireActivity(), binding.loading, new RecaptchaCallback() {
+                        @Override
+                        public void onSuccess(String token) {
+                            UserAuthLoginRequest request = new UserAuthLoginRequest(
+                                    binding.inputUsername.getText().toString(),
+                                    binding.inputPassword.getText().toString(),
+                                    token
+                            );
+                            viewModel.login(request);
+                        }
+
+                        @Override
+                        public void onFailure(String errorMessage) {
+                            Log.e(TAG, "reCAPTCHA verification failed: " + errorMessage);
+                        }
+                    });
+                }
             }
         });
 
@@ -163,8 +187,8 @@ public class LoginFragment extends Fragment {
         mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                googleSignInLauncher.launch(signInIntent);
+                Intent intent = mGoogleSignInClient.getSignInIntent();
+                googleSingInLauncher.launch(intent);
             }
         });
     }
@@ -175,7 +199,7 @@ public class LoginFragment extends Fragment {
 
             if (account != null) {
                 String email = account.getEmail();
-                String idToken = account.getIdToken(); // PENTING: Dapatkan ID Token
+                String idToken = account.getIdToken();
 
                 Log.d(TAG, "Google email: " + email);
                 Log.d(TAG, "ID Token: " + (idToken != null ? "received" : "null"));
@@ -185,14 +209,23 @@ public class LoginFragment extends Fragment {
                     return;
                 }
 
-                // OPSI 1: Kirim ID Token ke backend (RECOMMENDED - lebih aman)
-                // Backend akan verify token ini dengan Google
-                UserAuthLoginWithGoogleRequest request = new UserAuthLoginWithGoogleRequest();
-                request.email = email;
-                request.idToken = idToken; // Tambahkan field ini di UserAuthLoginWithGoogleRequest
+                verifyRecaptcha(requireActivity(), binding.loading, new RecaptchaCallback() {
+                    @Override
+                    public void onSuccess(String token) {
+                        UserAuthLoginWithGoogleRequest request = new UserAuthLoginWithGoogleRequest();
+                        request.email = email;
+                        request.idToken = idToken;
+                        request.captcha = token;
 
-                Toast.makeText(requireContext(), getString(R.string.login_with_google_login_with) + email, Toast.LENGTH_SHORT).show();
-                viewModel.loginWithGoogle(request);
+                        Toast.makeText(requireContext(), getString(R.string.login_with_google_login_with) + email, Toast.LENGTH_SHORT).show();
+                        viewModel.loginWithGoogle(request);
+                    }
+
+                    @Override
+                    public void onFailure(String errorMessage) {
+                        Toast.makeText(requireContext(), "reCAPTCHA failed: " + errorMessage, Toast.LENGTH_SHORT).show();
+                    }
+                });
             } else {
                 Toast.makeText(requireContext(), R.string.login_with_google_google_account_not_found, Toast.LENGTH_SHORT).show();
             }

@@ -9,8 +9,12 @@ public class UserAuthLoginRequest {
     @SerializedName("password")
     public String password;
 
-    public UserAuthLoginRequest(String username, String password) {
+    @SerializedName("captcha")
+    public String captcha;
+
+    public UserAuthLoginRequest(String username, String password, String captcha) {
         this.username = username;
         this.password = password;
+        this.captcha = captcha;
     }
 }

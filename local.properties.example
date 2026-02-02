@@ -2,8 +2,14 @@
 sdk.dir=C\:\\Users\\YourUsername\\AppData\\Local\\Android\\Sdk
 
 # ==================== SENSITIVE KEYS ====================
+# Release Key
+release.key.alias
+release.key.password
+release.store.password
+
 # Dapatkan dari Google Cloud Console
-google.id=YOUR_GOOGLE_CLIENT_ID_HERE
+google.client.id=YOUR_GOOGLE_CLIENT_ID_HERE
+google.recaptcha.site.key=YOUR_GOOGLE_RECAPTCHA_SITE_KEY_HERE
 
 # Dapatkan dari Midtrans Dashboard
 midtrans.client.key=YOUR_MIDTRANS_CLIENT_KEY_HERE

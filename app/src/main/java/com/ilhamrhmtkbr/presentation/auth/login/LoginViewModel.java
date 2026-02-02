@@ -41,14 +41,12 @@ public class LoginViewModel extends ViewModel implements ValidationFrontend<User
     }
 
     public void login(UserAuthLoginRequest request) {
-        if (isValidValue(request)) {
-            repository.login(request, new FormCallback<String>() {
-                @Override
-                public void onResult(FormState<String> state) {
-                    loginState.postValue(state);
-                }
-            });
-        }
+        repository.login(request, new FormCallback<String>() {
+            @Override
+            public void onResult(FormState<String> state) {
+                loginState.postValue(state);
+            }
+        });
     }
 
     public void loginWithGoogle(UserAuthLoginWithGoogleRequest request) {

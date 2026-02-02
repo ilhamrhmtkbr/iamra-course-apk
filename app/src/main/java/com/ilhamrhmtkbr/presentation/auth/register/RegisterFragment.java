@@ -31,6 +31,7 @@ import com.ilhamrhmtkbr.R;
 import com.ilhamrhmtkbr.core.state.FormState;
 import com.ilhamrhmtkbr.core.utils.notif.DialogUtil;
 import com.ilhamrhmtkbr.data.remote.dto.response.UserResponse;
+import com.ilhamrhmtkbr.presentation.auth.RecaptchaValidation;
 import com.ilhamrhmtkbr.presentation.utils.tools.FormStateHandler;
 import com.ilhamrhmtkbr.presentation.utils.helper.LoadingUtil;
 import com.ilhamrhmtkbr.presentation.guest.GuestActivity;
@@ -46,7 +47,7 @@ import java.util.Map;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class RegisterFragment extends Fragment {
+public class RegisterFragment extends Fragment implements RecaptchaValidation {
     private static final String TAG = "RegisterFragment";
     private FragmentUserAuthRegisterBinding binding;
     private RegisterViewModel viewModel;
@@ -76,7 +77,7 @@ public class RegisterFragment extends Fragment {
                 }
         );
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(BuildConfig.GOOGLE_ID)
+                .requestIdToken(BuildConfig.GOOGLE_CLIENT_ID)
                 .requestEmail()
                 .build();
 
@@ -126,10 +127,32 @@ public class RegisterFragment extends Fragment {
                         binding.inputLastName.getText().toString().trim(),
                         binding.inputUsername.getText().toString().trim(),
                         binding.inputPassword.getText().toString().trim(),
-                        binding.inputPasswordConfirm.getText().toString().trim()
+                        binding.inputPasswordConfirm.getText().toString().trim(),
+                        null
                 );
 
-                viewModel.register(request);
+                if (viewModel.isValidValue(request)){
+                    verifyRecaptcha(requireActivity(), binding.loading, new RecaptchaCallback() {
+                        @Override
+                        public void onSuccess(String token) {
+                            UserAuthRegisterRequest request = new UserAuthRegisterRequest(
+                                    binding.inputFirstName.getText().toString().trim(),
+                                    binding.inputMiddleName.getText().toString().trim(),
+                                    binding.inputLastName.getText().toString().trim(),
+                                    binding.inputUsername.getText().toString().trim(),
+                                    binding.inputPassword.getText().toString().trim(),
+                                    binding.inputPasswordConfirm.getText().toString().trim(),
+                                    token
+                            );
+                            viewModel.register(request);
+                        }
+
+                        @Override
+                        public void onFailure(String errorMessage) {
+                            Log.e(TAG, "reCAPTCHA verification failed: " + errorMessage);
+                        }
+                    });
+                }
             }
         });
 
@@ -183,7 +206,7 @@ public class RegisterFragment extends Fragment {
 
             if (account != null) {
                 String email = account.getEmail();
-                String idToken = account.getIdToken(); // PENTING: Dapatkan ID Token
+                String idToken = account.getIdToken();
 
                 Log.d(TAG, "Google email: " + email);
                 Log.d(TAG, "ID Token: " + (idToken != null ? "received" : "null"));
@@ -193,14 +216,22 @@ public class RegisterFragment extends Fragment {
                     return;
                 }
 
-                // OPSI 1: Kirim ID Token ke backend (RECOMMENDED - lebih aman)
-                // Backend akan verify token ini dengan Google
-                UserAuthLoginWithGoogleRequest request = new UserAuthLoginWithGoogleRequest();
-                request.email = email;
-                request.idToken = idToken; // Tambahkan field ini di UserAuthLoginWithGoogleRequest
+                verifyRecaptcha(requireActivity(), binding.loading, new RecaptchaCallback() {
+                    @Override
+                    public void onSuccess(String token) {
+                        UserAuthLoginWithGoogleRequest request = new UserAuthLoginWithGoogleRequest();
+                        request.email = email;
+                        request.idToken = idToken;
 
-                Toast.makeText(requireContext(), getString(R.string.login_with_google_login_with) + email, Toast.LENGTH_SHORT).show();
-                viewModel.loginWithGoogle(request);
+                        Toast.makeText(requireContext(), getString(R.string.login_with_google_login_with) + email, Toast.LENGTH_SHORT).show();
+                        viewModel.loginWithGoogle(request);
+                    }
+
+                    @Override
+                    public void onFailure(String errorMessage) {
+
+                    }
+                });
             } else {
                 Toast.makeText(requireContext(), R.string.login_with_google_google_account_not_found, Toast.LENGTH_SHORT).show();
             }

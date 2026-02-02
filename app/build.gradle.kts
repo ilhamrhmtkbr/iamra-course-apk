@@ -26,7 +26,7 @@ android {
 
     defaultConfig {
         applicationId = "com.ilhamrhmtkbr"
-        minSdk = 26
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -45,145 +45,49 @@ android {
 
     buildTypes {
         debug {
-            // Sensitive keys dari local.properties
-            buildConfigField("String", "GOOGLE_ID", "\"${getLocalProperty("google.id")}\"")
-            buildConfigField(
-                "String",
-                "MIDTRANS_CLIENT_KEY",
-                "\"${getLocalProperty("midtrans.client.key")}\""
-            )
+            buildConfigField("String", "GOOGLE_RECAPTCHA_SITE_KEY", "\"${getLocalProperty("google.recaptcha.site.key")}\"")
+            buildConfigField("String", "GOOGLE_CLIENT_ID", "\"${getLocalProperty("google.client.id")}\"")
+            buildConfigField("String", "MIDTRANS_CLIENT_KEY", "\"${getLocalProperty("midtrans.client.key")}\"")
 
-            // Image URLs
-            buildConfigField(
-                "String",
-                "INSTRUCTOR_COURSE_IMAGE_URL",
-                "\"${getLocalProperty("debug.instructor.image.url")}\""
-            )
-            buildConfigField(
-                "String",
-                "USER_PROFILE_IMAGE_URL",
-                "\"${getLocalProperty("debug.user.image.url")}\""
-            )
+            // Image URLs - Debug
+            buildConfigField("String", "INSTRUCTOR_COURSE_IMAGE_URL", "\"${getLocalProperty("debug.instructor.image.url")}\"")
+            buildConfigField("String", "USER_PROFILE_IMAGE_URL", "\"${getLocalProperty("debug.user.image.url")}\"")
 
-            // API URLs
-            buildConfigField(
-                "String",
-                "PUBLIC_API_URL",
-                "\"${getLocalProperty("debug.public.api")}\""
-            )
+            // API URLs - Debug
+            buildConfigField("String", "PUBLIC_API_URL", "\"${getLocalProperty("debug.public.api")}\"")
             buildConfigField("String", "USER_API_URL", "\"${getLocalProperty("debug.user.api")}\"")
-            buildConfigField(
-                "String",
-                "STUDENT_API_URL",
-                "\"${getLocalProperty("debug.student.api")}\""
-            )
-            buildConfigField(
-                "String",
-                "INSTRUCTOR_API_URL",
-                "\"${getLocalProperty("debug.instructor.api")}\""
-            )
-            buildConfigField(
-                "String",
-                "FORUM_API_URL",
-                "\"${getLocalProperty("debug.forum.api")}\""
-            )
+            buildConfigField("String", "STUDENT_API_URL", "\"${getLocalProperty("debug.student.api")}\"")
+            buildConfigField("String", "INSTRUCTOR_API_URL", "\"${getLocalProperty("debug.instructor.api")}\"")
+            buildConfigField("String", "FORUM_API_URL", "\"${getLocalProperty("debug.forum.api")}\"")
 
-            // WebSocket URLs dengan app keys dari local.properties
-            val reverbUserKey = getLocalProperty("reverb.user.app.key")
-            val reverbForumKey = getLocalProperty("reverb.forum.app.key")
-            buildConfigField(
-                "String",
-                "REVERB_USER_URL",
-                "\"ws://192.168.8.100/user-api/v1/wss/notif/app/$reverbUserKey\""
-            )
-            buildConfigField(
-                "String",
-                "REVERB_USER_AUTH",
-                "\"http://192.168.8.100/user-api/v1/broadcasting/auth\""
-            )
-            buildConfigField(
-                "String",
-                "REVERB_FORUM_URL",
-                "\"ws://192.168.8.100/forum-api/v1/wss/notif/app/$reverbForumKey\""
-            )
-            buildConfigField(
-                "String",
-                "REVERB_FORUM_AUTH",
-                "\"http://192.168.8.100/forum-api/v1/broadcasting/auth\""
-            )
+            // WebSocket Base URLs - Debug
+            buildConfigField("String", "REVERB_USER_URL", "\"ws://192.168.8.100/user-api/v1/wss/notif/app/${getLocalProperty("reverb.user.app.key")}\"")
+            buildConfigField("String", "REVERB_FORUM_URL", "\"ws://192.168.8.100/forum-api/v1/wss/notif/app/${getLocalProperty("reverb.forum.app.key")}\"")
+            buildConfigField("String", "REVERB_USER_AUTH", "\"http://192.168.8.100/user-api/v1/broadcasting/auth\"")
+            buildConfigField("String", "REVERB_FORUM_AUTH", "\"http://192.168.8.100/forum-api/v1/broadcasting/auth\"")
         }
 
         release {
-            // Sensitive keys dari local.properties
-            buildConfigField("String", "GOOGLE_ID", "\"${getLocalProperty("google.id")}\"")
-            buildConfigField(
-                "String",
-                "MIDTRANS_CLIENT_KEY",
-                "\"${getLocalProperty("midtrans.client.key")}\""
-            )
+            buildConfigField("String", "GOOGLE_RECAPTCHA_SITE_KEY", "\"${getLocalProperty("google.recaptcha.site.key")}\"")
+            buildConfigField("String", "GOOGLE_CLIENT_ID", "\"${getLocalProperty("google.client.id")}\"")
+            buildConfigField("String", "MIDTRANS_CLIENT_KEY", "\"${getLocalProperty("midtrans.client.key")}\"")
 
-            // Image URLs
-            buildConfigField(
-                "String",
-                "INSTRUCTOR_COURSE_IMAGE_URL",
-                "\"${getLocalProperty("release.instructor.image.url")}\""
-            )
-            buildConfigField(
-                "String",
-                "USER_PROFILE_IMAGE_URL",
-                "\"${getLocalProperty("release.user.image.url")}\""
-            )
+            // Image URLs - Release
+            buildConfigField("String", "INSTRUCTOR_COURSE_IMAGE_URL", "\"${getLocalProperty("release.instructor.image.url")}\"")
+            buildConfigField("String", "USER_PROFILE_IMAGE_URL", "\"${getLocalProperty("release.user.image.url")}\"")
 
-            // API URLs
-            buildConfigField(
-                "String",
-                "PUBLIC_API_URL",
-                "\"${getLocalProperty("release.public.api")}\""
-            )
-            buildConfigField(
-                "String",
-                "USER_API_URL",
-                "\"${getLocalProperty("release.user.api")}\""
-            )
-            buildConfigField(
-                "String",
-                "STUDENT_API_URL",
-                "\"${getLocalProperty("release.student.api")}\""
-            )
-            buildConfigField(
-                "String",
-                "INSTRUCTOR_API_URL",
-                "\"${getLocalProperty("release.instructor.api")}\""
-            )
-            buildConfigField(
-                "String",
-                "FORUM_API_URL",
-                "\"${getLocalProperty("release.forum.api")}\""
-            )
+            // API URLs - Release
+            buildConfigField("String", "PUBLIC_API_URL", "\"${getLocalProperty("release.public.api")}\"")
+            buildConfigField("String", "USER_API_URL", "\"${getLocalProperty("release.user.api")}\"")
+            buildConfigField("String", "STUDENT_API_URL", "\"${getLocalProperty("release.student.api")}\"")
+            buildConfigField("String", "INSTRUCTOR_API_URL", "\"${getLocalProperty("release.instructor.api")}\"")
+            buildConfigField("String", "FORUM_API_URL", "\"${getLocalProperty("release.forum.api")}\"")
 
-            // WebSocket URLs dengan app keys dari local.properties
-            val reverbUserKey = getLocalProperty("reverb.user.app.key")
-            val reverbForumKey = getLocalProperty("reverb.forum.app.key")
-            buildConfigField(
-                "String",
-                "REVERB_USER_URL",
-                "\"wss://api-user.course.iamra.site/v1/wss/notif/app/$reverbUserKey\""
-            )
-            buildConfigField(
-                "String",
-                "REVERB_USER_AUTH",
-                "\"https://api-user.course.iamra.site/v1/broadcasting/auth\""
-            )
-            buildConfigField(
-                "String",
-                "REVERB_FORUM_URL",
-                "\"wss://api-forum.course.iamra.site/v1/wss/notif/app/$reverbForumKey\""
-            )
-            buildConfigField(
-                "String",
-                "REVERB_FORUM_AUTH",
-                "\"https://api-forum.course.iamra.site/v1/broadcasting/auth\""
-            )
+            // WebSocket Base URLs - Release
+            buildConfigField("String", "REVERB_USER_AUTH", "\"https://api-user.course.iamra.site/v1/broadcasting/auth/${getLocalProperty("reverb.user.app.key")}\"")
+            buildConfigField("String", "REVERB_FORUM_AUTH", "\"https://api-forum.course.iamra.site/v1/broadcasting/auth/${getLocalProperty("reverb.forum.app.key")}\"")
+            buildConfigField("String", "REVERB_USER_URL", "\"wss://api-user.course.iamra.site/v1/wss/notif/app/\"")
+            buildConfigField("String", "REVERB_FORUM_URL", "\"wss://api-forum.course.iamra.site/v1/wss/notif/app/\"")
 
             isDebuggable = false
             isMinifyEnabled = true
@@ -205,12 +109,12 @@ android {
          * Jika menulis kode Java "Baru" (Java 8+): Karena desugaring dimatikan, maka HP Android
          * versi lama (di bawah minSdk) akan bingung dan aplikasi bisa crash
          */
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlin {
-        jvmToolchain(21)
+        jvmToolchain(17)
     }
 
     buildFeatures {
@@ -277,8 +181,10 @@ dependencies {
     implementation(libs.viewpager2)
 
     // Buat Login google
-    implementation(libs.play.services.safetynet)
     implementation(libs.play.services.auth)
+
+    // Recaptcha
+    implementation("com.google.android.recaptcha:recaptcha:18.5.1")
 
     // SwipeRefreshLayout, pas scroll kebawah refresh data
     implementation(libs.swiperefreshlayout)

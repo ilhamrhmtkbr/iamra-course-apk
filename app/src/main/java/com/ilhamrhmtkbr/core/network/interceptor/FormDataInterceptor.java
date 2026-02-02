@@ -44,6 +44,7 @@ public class FormDataInterceptor implements Interceptor {
 
         Request.Builder requestBuilder = original.newBuilder()
                 .header("Accept", "application/json")
+                .header("X-Client-Type", "android")
                 .header("Accept-Language", langUtil.getLang());
 
         if (!isMultipart) {

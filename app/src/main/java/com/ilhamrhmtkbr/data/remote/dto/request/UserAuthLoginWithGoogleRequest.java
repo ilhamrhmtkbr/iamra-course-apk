@@ -9,4 +9,7 @@ public class UserAuthLoginWithGoogleRequest {
 
     @SerializedName("idToken")
     public String idToken;
+
+    @SerializedName("captcha")
+    public String captcha;
 }
